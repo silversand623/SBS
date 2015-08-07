@@ -1,0 +1,7 @@
+pod 'FSImageViewer'
+pod 'TPKeyboardAvoiding'
+pod 'RMMapper'
+pod 'TTCounterLabel'
+pod 'UIScrollSlidingPages'
+pod 'SVProgressHUD'
+pod 'MWPhotoBrowser'

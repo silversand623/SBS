@@ -1,0 +1,173 @@
+//
+//  QuestionTableViewController.m
+//  SBS
+//
+//  Created by lyn on 15/7/2.
+//  Copyright (c) 2015年 Tellyes. All rights reserved.
+//
+
+#import "QuestionTableViewController.h"
+#import "SVProgressHUD.h"
+
+@interface QuestionTableViewController ()
+@property(strong,nonatomic)NSIndexPath *lastIndexPath;
+@end
+
+@implementation QuestionTableViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    _optionArray = [[NSArray alloc] initWithObjects:@"A",@"B",@"C",@"D",@"E",@"F",@"G",@"H",@"I",nil];
+    
+    self.labelAnswer.text = self.questionExlain;
+    
+    //CGSize size = [self.labelAnswer sizeThatFits:CGSizeMake(self.labelAnswer.frame.size.width, MAXFLOAT)];
+    CGFloat fHeight = [self getLabelHeight:self.questionExlain];
+    
+    self.labelAnswer.frame = CGRectMake(self.labelAnswer.frame.origin.x, self.labelAnswer.frame.origin.y, self.labelAnswer.frame.size.width, fHeight);
+    [self.labelAnswer setHidden:YES];
+    
+    
+    if (self.questionContent != nil) {
+        NSIndexPath *indexPath = [NSIndexPath indexPathForItem:self.questionContent.count-1 inSection:0];
+        [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom animated:NO];
+    }
+    
+    // 设置UIScrollView的滚动范围（内容大小）
+    _scrollView.contentSize = CGSizeMake(320, 500);
+    // 隐藏水平滚动条
+    _scrollView.showsHorizontalScrollIndicator = NO;
+    _scrollView.showsVerticalScrollIndicator = YES;
+    
+}
+
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Table view data source
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (self.questionContent != nil) {
+        return self.questionContent.count;
+    } else
+    {
+        return 0;
+    }
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *TableSampleIdentifier = @"Image_Text";
+    
+    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:
+                             TableSampleIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc]
+                initWithStyle:UITableViewCellStyleSubtitle
+                reuseIdentifier:TableSampleIdentifier];
+        [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+    }
+    
+    if (self.questionContent != nil) {
+        NSString* item = [self.questionContent objectAtIndex:indexPath.row];
+        if (![item isEqualToString:@""]) {
+            cell.textLabel.text = [[NSString alloc] initWithFormat:@"%@. %@",self.optionArray[indexPath.row],item];
+            cell.textLabel.numberOfLines=0;
+            self.labelQuestion.text = [NSString stringWithFormat:@"%@", self.questionTitle];
+        }
+    }
+    
+    // 重用机制，如果选中的行正好要重用
+    int oldRow = (_lastIndexPath != nil) ? [_lastIndexPath row] : -1;
+    if (oldRow == indexPath.row) {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    } else {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
+    
+    return cell;
+    
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    
+    int newRow = [indexPath row];
+    int oldRow = (_lastIndexPath != nil) ? [_lastIndexPath row] : -1;
+    if(newRow != oldRow)
+    {
+        UITableViewCell *newCell = [tableView cellForRowAtIndexPath:indexPath];
+        newCell.accessoryType = UITableViewCellAccessoryCheckmark;
+        
+        UITableViewCell *oldCell = [tableView cellForRowAtIndexPath:_lastIndexPath];
+        oldCell.accessoryType = UITableViewCellAccessoryNone;
+        _lastIndexPath = indexPath;
+    }
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+//------------------TableView Cell Height------------------
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (self.questionContent != nil) {
+        NSString *content = [self.questionContent objectAtIndex:indexPath.row];
+        return [self getLabelHeight:content];
+    }
+    return 44;
+}
+
+-(CGFloat)getLabelHeight:(NSString *)sText {
+    // 列寬
+    CGFloat contentWidth = 280;
+    // 用何種字體進行顯示
+    UIFont *font = [UIFont systemFontOfSize:17];
+    
+    // 該行要顯示的內容
+    // 計算出顯示完內容需要的最小尺寸
+    CGSize size = [sText sizeWithFont:font constrainedToSize:CGSizeMake(contentWidth, 1000.0f) lineBreakMode:NSLineBreakByWordWrapping];
+    return MAX(size.height, 44)+10;
+}
+
+- (IBAction)confirmAnswer:(UIButton *)sender {
+    NSString *msg = nil;
+    int oldRow = (_lastIndexPath != nil) ? [_lastIndexPath row] : -1;
+    if (oldRow<0) {
+        msg = @"请选择一个答案";
+        [SVProgressHUD dismiss];
+        
+        [SVProgressHUD showErrorWithStatus:msg];
+        return;
+    }
+    NSString *sItem = self.optionArray[oldRow];
+    
+    
+    if ( [sItem isEqualToString:self.questionAnswer])
+    {
+        msg = @"回答正确";
+        [SVProgressHUD dismiss];
+        
+        [SVProgressHUD showSuccessWithStatus:msg];
+        self.labelAnswer.textColor = [UIColor blueColor];
+    } else
+    {
+        msg = @"回答错误";
+        [SVProgressHUD dismiss];
+        
+        [SVProgressHUD showErrorWithStatus:msg];
+        self.labelAnswer.textColor = [UIColor redColor];
+    }
+    
+    [self.labelAnswer setHidden:NO];
+    CGFloat fHeight = [self getLabelHeight:self.labelAnswer.text];
+    CGFloat fWidth = self.labelAnswer.frame.size.width;
+    CGRect cgSize = CGRectMake(self.labelAnswer.frame.origin.x,self.labelAnswer.frame.origin.y, fWidth, fHeight);
+    [self.labelAnswer setFrame:cgSize];
+    
+    _scrollView.contentSize = CGSizeMake(fWidth, self.labelAnswer.frame.origin.y+fHeight);
+}
+@end
