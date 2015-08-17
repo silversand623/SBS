@@ -200,7 +200,22 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uyb-AX-Cck" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1881" y="-434.5"/>
+            <point key="canvasLocation" x="1881" y="-502"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="BIl-Lp-JpH">
+            <objects>
+                <viewController id="MPd-Tu-rsL" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XgP-zk-gqd">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="148"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="EVn-zi-C3R"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a9v-nj-gqd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2324" y="-465"/>
         </scene>
         <!--考试时长-->
         <scene sceneID="zSl-jy-Joe">
@@ -213,7 +228,7 @@
                         <sections>
                             <tableViewSection id="Vyr-Ya-IbA">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="sbC-bU-zMz">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="sbC-bU-zMz">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sbC-bU-zMz" id="1Nv-Mt-dBz">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -227,6 +242,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="MPd-Tu-rsL" kind="push" id="IAk-IE-RGg"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="gci-cJ-zWB">
                                         <autoresizingMask key="autoresizingMask"/>
