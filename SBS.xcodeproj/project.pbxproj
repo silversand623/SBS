@@ -8,15 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		10E1448C198B83CE0033347A /* libzbar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 10E1448B198B83CE0033347A /* libzbar.a */; };
-		13226A6418C5B2FB00E9E276 /* 7s.png in Resources */ = {isa = PBXBuildFile; fileRef = 13226A6318C5B2FB00E9E276 /* 7s.png */; };
 		13226A6718C5B61C00E9E276 /* StepViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 13226A6618C5B61C00E9E276 /* StepViewCell.m */; };
-		1333708F18C5987600046548 /* 1s.png in Resources */ = {isa = PBXBuildFile; fileRef = 1333708818C5987600046548 /* 1s.png */; };
-		1333709018C5987600046548 /* 2s.png in Resources */ = {isa = PBXBuildFile; fileRef = 1333708918C5987600046548 /* 2s.png */; };
-		1333709118C5987600046548 /* 3s.png in Resources */ = {isa = PBXBuildFile; fileRef = 1333708A18C5987600046548 /* 3s.png */; };
 		1333709218C5987600046548 /* 4s.png in Resources */ = {isa = PBXBuildFile; fileRef = 1333708B18C5987600046548 /* 4s.png */; };
-		1333709318C5987600046548 /* 5s.png in Resources */ = {isa = PBXBuildFile; fileRef = 1333708C18C5987600046548 /* 5s.png */; };
-		1333709418C5987600046548 /* 6s.png in Resources */ = {isa = PBXBuildFile; fileRef = 1333708D18C5987600046548 /* 6s.png */; };
-		1333709518C5987600046548 /* 登陆.png in Resources */ = {isa = PBXBuildFile; fileRef = 1333708E18C5987600046548 /* 登陆.png */; };
 		1397D79218ACB3AF00C5E24A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1397D79118ACB3AF00C5E24A /* Foundation.framework */; };
 		1397D79418ACB3AF00C5E24A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1397D79318ACB3AF00C5E24A /* CoreGraphics.framework */; };
 		1397D79618ACB3AF00C5E24A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1397D79518ACB3AF00C5E24A /* UIKit.framework */; };
@@ -105,16 +98,9 @@
 /* Begin PBXFileReference section */
 		07AEB453781D88FC0AC531C1 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		10E1448B198B83CE0033347A /* libzbar.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libzbar.a; sourceTree = "<group>"; };
-		13226A6318C5B2FB00E9E276 /* 7s.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 7s.png; sourceTree = "<group>"; };
 		13226A6518C5B61C00E9E276 /* StepViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StepViewCell.h; sourceTree = "<group>"; };
 		13226A6618C5B61C00E9E276 /* StepViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StepViewCell.m; sourceTree = "<group>"; };
-		1333708818C5987600046548 /* 1s.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1s.png; sourceTree = "<group>"; };
-		1333708918C5987600046548 /* 2s.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2s.png; sourceTree = "<group>"; };
-		1333708A18C5987600046548 /* 3s.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3s.png; sourceTree = "<group>"; };
 		1333708B18C5987600046548 /* 4s.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4s.png; sourceTree = "<group>"; };
-		1333708C18C5987600046548 /* 5s.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5s.png; sourceTree = "<group>"; };
-		1333708D18C5987600046548 /* 6s.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 6s.png; sourceTree = "<group>"; };
-		1333708E18C5987600046548 /* 登陆.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "登陆.png"; sourceTree = "<group>"; };
 		1397D78E18ACB3AF00C5E24A /* SBS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SBS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1397D79118ACB3AF00C5E24A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1397D79318ACB3AF00C5E24A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -315,14 +301,7 @@
 				3C34A0001B5E45A6005C1C58 /* practice-1.png */,
 				3C34A0011B5E45A6005C1C58 /* practice-2.png */,
 				3C34A0021B5E45A6005C1C58 /* sweep.png */,
-				13226A6318C5B2FB00E9E276 /* 7s.png */,
-				1333708818C5987600046548 /* 1s.png */,
-				1333708918C5987600046548 /* 2s.png */,
-				1333708A18C5987600046548 /* 3s.png */,
 				1333708B18C5987600046548 /* 4s.png */,
-				1333708C18C5987600046548 /* 5s.png */,
-				1333708D18C5987600046548 /* 6s.png */,
-				1333708E18C5987600046548 /* 登陆.png */,
 			);
 			name = image;
 			sourceTree = "<group>";
@@ -669,7 +648,6 @@
 				3C34A0061B5E45A6005C1C58 /* examine-1.png in Resources */,
 				3CFAF4A91B60CAD300FCF443 /* 3.png in Resources */,
 				1397D79C18ACB3AF00C5E24A /* InfoPlist.strings in Resources */,
-				1333709318C5987600046548 /* 5s.png in Resources */,
 				3C34A00B1B5E45A6005C1C58 /* login-bg.jpg in Resources */,
 				AD6E98831925D581006C4A7A /* remind_noimage.png in Resources */,
 				3CFAF4A41B5F3DC000FCF443 /* 2.png in Resources */,
@@ -677,8 +655,6 @@
 				3C34A00F1B5E45A6005C1C58 /* practice-1.png in Resources */,
 				AD6E98841925D581006C4A7A /* remind_noimage@2x.png in Resources */,
 				1397D7FC18ACBFAD00C5E24A /* zbar-samples.png in Resources */,
-				13226A6418C5B2FB00E9E276 /* 7s.png in Resources */,
-				1333709418C5987600046548 /* 6s.png in Resources */,
 				1397D7FA18ACBFAD00C5E24A /* zbar-help.html in Resources */,
 				1397D7CA18ACB48100C5E24A /* LoginViewController.xib in Resources */,
 				3CFAF4AB1B60CAD300FCF443 /* loading.png in Resources */,
@@ -686,16 +662,12 @@
 				3C34A00D1B5E45A6005C1C58 /* personal-1.png in Resources */,
 				3C34A0101B5E45A6005C1C58 /* practice-2.png in Resources */,
 				3CA2AB5B1B29742C00BAAB63 /* SBS.storyboard in Resources */,
-				1333709018C5987600046548 /* 2s.png in Resources */,
 				3CFAF4AA1B60CAD300FCF443 /* icon.png in Resources */,
 				1397D7FB18ACBFAD00C5E24A /* zbar-helpicons.png in Resources */,
 				3CFAF4AC1B60CAD300FCF443 /* unload.png in Resources */,
 				3C34A0041B5E45A6005C1C58 /* bluebutton.png in Resources */,
 				3C34A0071B5E45A6005C1C58 /* examine-2.png in Resources */,
-				1333709518C5987600046548 /* 登陆.png in Resources */,
-				1333709118C5987600046548 /* 3s.png in Resources */,
 				3C34A0111B5E45A6005C1C58 /* sweep.png in Resources */,
-				1333708F18C5987600046548 /* 1s.png in Resources */,
 				3C34A00E1B5E45A6005C1C58 /* personal-2.png in Resources */,
 				3C34A0051B5E45A6005C1C58 /* graybutton.png in Resources */,
 			);
