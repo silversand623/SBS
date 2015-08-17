@@ -138,7 +138,7 @@
 #endif
                                    
 #ifdef SIMULATOR
-                                   ((AppDelegate*)[[UIApplication sharedApplication] delegate]).modelName = @"TY000100004435M722F592FBA5E00";
+                                   ((AppDelegate*)[[UIApplication sharedApplication] delegate]).modelName = @"TY000100004435M68C28B11057E00";
                                    //全功能急救人140301
                                    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"SBS" bundle:nil];
                                    
