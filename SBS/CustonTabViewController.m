@@ -7,6 +7,7 @@
 //
 
 #import "CustonTabViewController.h"
+#import "UIColor+WTRequestCenter.h"
 
 @interface CustonTabViewController ()
 
@@ -21,13 +22,14 @@
     UITabBarItem *practiceItem = items[0];
     practiceItem.image = [[UIImage imageNamed:@"practice-1.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     practiceItem.selectedImage = [[UIImage imageNamed:@"practice-2.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    UITabBarItem *examItem = items[1];
-    examItem.image = [[UIImage imageNamed:@"examine-1.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    examItem.selectedImage = [[UIImage imageNamed:@"examine-2.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    UITabBarItem *personalItem = items[2];
+    //UITabBarItem *examItem = items[1];
+    //examItem.image = [[UIImage imageNamed:@"examine-1.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    //examItem.selectedImage = [[UIImage imageNamed:@"examine-2.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UITabBarItem *personalItem = items[1];
     personalItem.image = [[UIImage imageNamed:@"personal-1.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     personalItem.selectedImage = [[UIImage imageNamed:@"personal-2.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor colorWithRed:130/255.0 green:198/255.0 blue:123/255.0 alpha:1]} forState:UIControlStateSelected];
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor WTcolorWithHexString:@"#5d7da3"]} forState:UIControlStateSelected];
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor WTcolorWithHexString:@"#454545"]} forState:UIControlStateNormal];
 }
 
 - (void)didReceiveMemoryWarning {
