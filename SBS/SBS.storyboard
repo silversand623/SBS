@@ -364,27 +364,16 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="54"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="7s.png" id="YHy-Cj-T6G">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="55"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Dhk-3G-uhM">
+                                                    <rect key="frame" x="0.0" y="1" width="318" height="50"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="61u-SG-Ucu">
-                                                    <rect key="frame" x="26" y="16" width="19" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Dhk-3G-uhM">
-                                                    <rect key="frame" x="61" y="16" width="197" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                    <color key="textColor" red="0.27058823529411763" green="0.27058823529411763" blue="0.27058823529411763" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="numLable" destination="61u-SG-Ucu" id="2sE-6P-Aqn"/>
                                             <outlet property="textLable1" destination="Dhk-3G-uhM" id="Zrr-cB-a5q"/>
                                             <segue destination="nh7-bP-OsE" kind="push" id="w81-2V-SS6"/>
                                         </connections>
@@ -918,11 +907,11 @@
     <resources>
         <image name="7s.png" width="639" height="119"/>
         <image name="bluebutton.png" width="600" height="80"/>
-        <image name="examine-1.png" width="76" height="76"/>
+        <image name="examine-1.png" width="30" height="30"/>
         <image name="graybutton.png" width="573" height="81"/>
         <image name="personal-1.png" width="30" height="30"/>
-        <image name="practice-1.png" width="38" height="38"/>
-        <image name="practice-2.png" width="38" height="38"/>
+        <image name="practice-1.png" width="30" height="30"/>
+        <image name="practice-2.png" width="30" height="30"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
