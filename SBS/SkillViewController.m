@@ -40,18 +40,15 @@
     
 	// Do any additional setup after loading the view, typically from a nib.
     self.list = [[NSArray alloc]init];
-    self.edgesForExtendedLayout = UIRectEdgeNone;
-    [self.tableView setBackgroundColor:[UIColor clearColor]];
-    [self.tableView setSeparatorColor:[UIColor clearColor]];
-    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+    //self.edgesForExtendedLayout = UIRectEdgeNone;
     
     self.navigationItem.leftBarButtonItem =[[UIBarButtonItem alloc] initWithTitle:@"扫一扫" style:UIBarButtonItemStylePlain target:self action:@selector(backToScan)];
     
     [self getModelInfo];
     [self.navigationController setHidesBarsOnTap:NO];
-    //[self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleSingleLine];
     
 }
+
 
 -(void)viewDidLayoutSubviews
 {
@@ -74,6 +71,7 @@
         [cell setLayoutMargins:UIEdgeInsetsZero];
     }
 }
+
 
 - (void)viewWillAppear:(BOOL)animated
 {

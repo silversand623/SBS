@@ -33,6 +33,10 @@
     
     UINavigationBar *bar=[UINavigationBar appearance];
     [bar setBarTintColor:[UIColor WTcolorWithHexString:@"#6a6a6a"]];
+    [bar setTintColor:[UIColor whiteColor]];
+    [bar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor],
+                                  NSFontAttributeName:[UIFont systemFontOfSize:20],
+                                  }];
     
     [ZBarReaderView class];
     
