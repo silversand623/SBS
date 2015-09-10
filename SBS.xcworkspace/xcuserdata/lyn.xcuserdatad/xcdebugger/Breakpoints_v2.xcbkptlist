@@ -842,11 +842,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SBS/SkillViewController.m"
-            timestampString = "459407432.583274"
+            timestampString = "463563128.245534"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
             landmarkName = "-viewWillAppear:"
             landmarkType = "5">
          </BreakpointContent>

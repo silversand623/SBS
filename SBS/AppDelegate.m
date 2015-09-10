@@ -10,6 +10,7 @@
 #import "LoginViewController.h"
 #import <sqlite3.h>
 #import <AVFoundation/AVFoundation.h>
+#import "UIColor+WTRequestCenter.h"
 
 @implementation AppDelegate
 
@@ -29,6 +30,9 @@
     self.window.backgroundColor = [UIColor whiteColor];
 
     [self.window makeKeyAndVisible];
+    
+    UINavigationBar *bar=[UINavigationBar appearance];
+    [bar setBarTintColor:[UIColor WTcolorWithHexString:@"#6a6a6a"]];
     
     [ZBarReaderView class];
     
