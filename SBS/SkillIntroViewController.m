@@ -122,7 +122,7 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
-    [self.navigationController setHidesBarsOnTap:NO];
+    //[self.navigationController setHidesBarsOnTap:NO];
 }
 
 - (void)imageClicked{
@@ -133,7 +133,7 @@
                                              style:UIBarButtonItemStylePlain
                                              target:self
                                              action:nil];
-    [self.navigationController setHidesBarsOnTap:YES];
+    //[self.navigationController setHidesBarsOnTap:YES];
     [self.navigationController pushViewController:controller animated:NO];
 }
 

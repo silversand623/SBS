@@ -45,7 +45,7 @@
     self.navigationItem.leftBarButtonItem =[[UIBarButtonItem alloc] initWithTitle:@"扫一扫" style:UIBarButtonItemStylePlain target:self action:@selector(backToScan)];
     
     [self getModelInfo];
-    [self.navigationController setHidesBarsOnTap:NO];
+    //[self.navigationController setHidesBarsOnTap:NO];
     
 }
 

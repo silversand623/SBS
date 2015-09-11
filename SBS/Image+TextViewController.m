@@ -57,7 +57,7 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [self.navigationController setHidesBarsOnTap:YES];
+    //[self.navigationController setHidesBarsOnTap:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -136,7 +136,7 @@
     browser.autoPlayOnAppear = NO;
     [browser setCurrentPhotoIndex:0];
     
-    [self.navigationController setHidesBarsOnTap:NO];
+    //[self.navigationController setHidesBarsOnTap:NO];
     [self.navigationController pushViewController:browser animated:YES];
 }
 

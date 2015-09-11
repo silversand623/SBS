@@ -200,7 +200,7 @@
 
 - (void)finishWork
 {
-    [self.navigationController setHidesBarsOnTap:NO];
+    //[self.navigationController setHidesBarsOnTap:NO];
     [self.navigationController popToRootViewControllerAnimated:NO];
 }
 
