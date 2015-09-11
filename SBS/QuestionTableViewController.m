@@ -18,6 +18,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.currentPage.text = self.sIndex;
+    self.totalPage.text = self.sTotal;
+    
     _optionArray = [[NSArray alloc] initWithObjects:@"A",@"B",@"C",@"D",@"E",@"F",@"G",@"H",@"I",nil];
     
     self.labelAnswer.text = self.questionExlain;

@@ -24,6 +24,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.currentPage.text = self.sIndex;
+    self.totalPage.text = self.sTotal;
     
     if (self.firstImgPath != nil)
     {

@@ -89,6 +89,8 @@
                 //3.从storyboard取得newViewCtroller对象，通过Identifier区分
                 OnlyTextTableViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:controllerId];
                 viewController.skillText = [dic objectForKey:@"TextContext"];
+                viewController.sIndex=[NSString stringWithFormat:@"%d",index+1];
+                viewController.sTotal = [NSString stringWithFormat:@"/%d",self.detailList.count];
                 slidePage = [[TTSlidingPage alloc] initWithContentViewController:viewController];
             }
             break;
@@ -102,6 +104,8 @@
             //3.从storyboard取得newViewCtroller对象，通过Identifier区分
             Image_TextViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:controllerId];
             viewController.skillText = [dic objectForKey:@"TextContext"];
+            viewController.sIndex=[NSString stringWithFormat:@"%d",index+1];
+            viewController.sTotal = [NSString stringWithFormat:@"/%d",self.detailList.count];
             
             NSString* imagePath = [dic objectForKey:@"ImagePaths"];
             NSString* firstPath = nil;
@@ -148,6 +152,9 @@
             
             viewController.questionExlain = [dic objectForKey:@"P_quesstionExlain"];
             
+            viewController.sIndex=[NSString stringWithFormat:@"%d",index+1];
+            viewController.sTotal = [NSString stringWithFormat:@"/%d",self.detailList.count];
+            
             slidePage = [[TTSlidingPage alloc] initWithContentViewController:viewController];
             
         }
@@ -166,6 +173,9 @@
             viewController.questionContent = [dic objectForKey:@"P_questionOptions"];
             
             viewController.questionExlain = [dic objectForKey:@"P_quesstionExlain"];
+            
+            viewController.sIndex=[NSString stringWithFormat:@"%d",index+1];
+            viewController.sTotal = [NSString stringWithFormat:@"/%d",self.detailList.count];
             
             slidePage = [[TTSlidingPage alloc] initWithContentViewController:viewController];
             

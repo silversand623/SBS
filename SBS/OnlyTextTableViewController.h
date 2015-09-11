@@ -12,6 +12,11 @@
 #define WIDTH 280
 
 
-@interface OnlyTextTableViewController : UITableViewController
+@interface OnlyTextTableViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong) NSArray *skillText;
+@property (nonatomic, strong) NSString *sIndex;
+@property (nonatomic, strong) NSString *sTotal;
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UILabel *currentPage;
+@property (weak, nonatomic) IBOutlet UILabel *totalPage;
 @end

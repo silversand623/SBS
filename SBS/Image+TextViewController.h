@@ -25,10 +25,15 @@
 
 @property (nonatomic, strong) NSString *firstImgPath;
 
+@property (nonatomic, strong) NSString *sIndex;
+@property (nonatomic, strong) NSString *sTotal;
+
 @property(strong, nonatomic) FSImageViewerViewController *imageViewController;
 
 @property (nonatomic, strong) NSMutableArray *photos;
 
 @property (nonatomic, strong) NSMutableArray *thumbs;
+@property (weak, nonatomic) IBOutlet UILabel *currentPage;
+@property (weak, nonatomic) IBOutlet UILabel *totalPage;
 
 @end

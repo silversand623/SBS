@@ -16,6 +16,10 @@
 @property (nonatomic,strong)NSArray* questionContent;
 @property(nonatomic,strong)NSString* questionAnswer;
 @property(nonatomic,strong)NSString* questionExlain;
+@property (weak, nonatomic) IBOutlet UILabel *currentPage;
+@property (weak, nonatomic) IBOutlet UILabel *totalPage;
+@property (nonatomic, strong) NSString *sIndex;
+@property (nonatomic, strong) NSString *sTotal;
 @property (nonatomic,strong)NSArray* optionArray;
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 - (IBAction)confirmAnswer:(UIButton *)sender;

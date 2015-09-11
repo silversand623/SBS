@@ -18,6 +18,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.currentPage.text = self.sIndex;
+    self.totalPage.text = self.sTotal;
     
 }
 
