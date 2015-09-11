@@ -38,7 +38,7 @@
     }
     
     // 设置UIScrollView的滚动范围（内容大小）
-    _scrollView.contentSize = CGSizeMake(320, 500);
+    _scrollView.contentSize = CGSizeMake(320, 480);
     // 隐藏水平滚动条
     _scrollView.showsHorizontalScrollIndicator = NO;
     _scrollView.showsVerticalScrollIndicator = YES;
