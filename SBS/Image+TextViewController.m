@@ -102,8 +102,8 @@
                     NSString *videoUrl = [strs objectAtIndex:1];
                     NSArray *strVideo = [videoUrl componentsSeparatedByString:@"￥"];
                     videoUrl = [NSString stringWithFormat:@"http://%@%@", sIP ,[strVideo objectAtIndex:0]];
-                    MWPhoto *video = [MWPhoto videoWithURL:[NSURL URLWithString:videoUrl]];
-                    [images addObject:video];
+                    //MWPhoto *video = [MWPhoto videoWithURL:[NSURL URLWithString:videoUrl]];
+                    //[images addObject:video];
                     
                 }
             }
@@ -165,20 +165,6 @@
     }
     
     if (self.skillText != nil) {
-        NSUInteger row = [indexPath row];
-        NSDictionary * item = [self.skillText objectAtIndex:row];
-        NSArray* items =[item objectForKey:@"items"];
-        NSMutableArray *arr = [[NSMutableArray alloc] init];
-        for(int i = 0; i< items.count; i++)
-        {
-            NSString *str = [items objectAtIndex:i];
-            NSArray* strs = [str componentsSeparatedByString:@"^"];
-            [arr addObject:[strs objectAtIndex:0]];
-        }
-        NSString *string = [arr componentsJoinedByString:@"\n"];
-        cell.detailTextLabel.text = string;
-        cell.detailTextLabel.numberOfLines = 0;
-        cell.textLabel.text =[item objectForKey:@"smallTitle"];
         
         NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
         paragraphStyle.lineSpacing = 7.0f;
@@ -188,6 +174,46 @@
                               NSFontAttributeName : [UIFont systemFontOfSize:SMALLFONT],
                               NSParagraphStyleAttributeName : paragraphStyle,
                               };
+        
+        NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc] initWithString:@""];
+        
+        NSUInteger row = [indexPath row];
+        NSDictionary * item = [self.skillText objectAtIndex:row];
+        NSArray* items =[item objectForKey:@"items"];
+        NSMutableArray *arr = [[NSMutableArray alloc] init];
+        for(int i = 0; i< items.count; i++)
+        {
+            NSString *str = [items objectAtIndex:i];
+            NSArray* strs = [str componentsSeparatedByString:@"^"];
+            if (strs.count > 1) {
+                NSString *videoUrl = [strs objectAtIndex:1];
+                NSArray *strVideo = [videoUrl componentsSeparatedByString:@"￥"];
+                //videoUrl = [NSString stringWithFormat:@"http://%@%@", sIP ,[strVideo objectAtIndex:0]];
+                //MWPhoto *video = [MWPhoto videoWithURL:[NSURL URLWithString:videoUrl]];
+                //[images addObject:video];
+                NSTextAttachment *attachment=[[NSTextAttachment alloc] initWithData:nil ofType:nil];
+                UIImage *img=[UIImage imageNamed:@"video.png"];
+                attachment.image=img;
+                attachment.bounds=CGRectMake(0, 0, 30, 30);
+                NSAttributedString *text=[NSAttributedString attributedStringWithAttachment:attachment];
+                [attrString appendAttributedString:text];
+                NSString *strTemp = [NSString stringWithFormat:@"\n"];
+                NSAttributedString *attrTemp = [[NSAttributedString alloc] initWithString:strTemp attributes:ats];
+                [attrString appendAttributedString:attrTemp];
+            }
+            //[arr addObject:[strs objectAtIndex:0]];
+            //[attrString appendAttributedString:[strs objectAtIndex:0]];
+            NSString *strTemp = [NSString stringWithFormat:@"%@\n",[strs objectAtIndex:0]];
+            NSAttributedString *attrTemp = [[NSAttributedString alloc] initWithString:strTemp attributes:ats];
+            [attrString appendAttributedString:attrTemp];
+        }
+        NSString *string = [arr componentsJoinedByString:@"\n"];
+        //cell.detailTextLabel.text = string;
+        cell.detailTextLabel.numberOfLines = 0;
+        cell.textLabel.text =[item objectForKey:@"smallTitle"];
+        
+        cell.detailTextLabel.attributedText = attrString;
+        /*
         if (string.length > 30) {
             cell.detailTextLabel.attributedText = [[NSAttributedString alloc] initWithString:string attributes:ats];//textview 设置行间距
         }else
@@ -195,7 +221,7 @@
             cell.detailTextLabel.font = [UIFont systemFontOfSize:SMALLFONT];
             cell.detailTextLabel.text = string;
         }
-        
+        */
         
         ats = @{
                 NSFontAttributeName : [UIFont systemFontOfSize:BIGFONT],
