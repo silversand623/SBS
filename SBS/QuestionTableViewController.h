@@ -22,6 +22,7 @@
 @property (nonatomic, strong) NSString *sTotal;
 @property (nonatomic,strong)NSArray* optionArray;
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UILabel *txtTip;
 - (IBAction)confirmAnswer:(UIButton *)sender;
 
 @end

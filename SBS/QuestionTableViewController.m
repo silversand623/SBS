@@ -8,6 +8,7 @@
 
 #import "QuestionTableViewController.h"
 #import "SVProgressHUD.h"
+#import "UIColor+WTRequestCenter.h"
 
 @interface QuestionTableViewController ()
 @property(strong,nonatomic)NSIndexPath *lastIndexPath;
@@ -80,16 +81,16 @@
         if (![item isEqualToString:@""]) {
             cell.textLabel.text = [[NSString alloc] initWithFormat:@"%@. %@",self.optionArray[indexPath.row],item];
             cell.textLabel.numberOfLines=0;
-            self.labelQuestion.text = [NSString stringWithFormat:@"%@", self.questionTitle];
+            self.labelQuestion.text = [NSString stringWithFormat:@"%@ ( )", self.questionTitle];
         }
     }
     
     // 重用机制，如果选中的行正好要重用
     int oldRow = (_lastIndexPath != nil) ? [_lastIndexPath row] : -1;
     if (oldRow == indexPath.row) {
-        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        cell.backgroundColor = [UIColor WTcolorWithHexString:@"#ced8e3"];
     } else {
-        cell.accessoryType = UITableViewCellAccessoryNone;
+        cell.backgroundColor = [UIColor whiteColor];
     }
     
     return cell;
@@ -104,10 +105,10 @@
     if(newRow != oldRow)
     {
         UITableViewCell *newCell = [tableView cellForRowAtIndexPath:indexPath];
-        newCell.accessoryType = UITableViewCellAccessoryCheckmark;
+        newCell.backgroundColor = [UIColor WTcolorWithHexString:@"#ced8e3"];
         
         UITableViewCell *oldCell = [tableView cellForRowAtIndexPath:_lastIndexPath];
-        oldCell.accessoryType = UITableViewCellAccessoryNone;
+        oldCell.backgroundColor = [UIColor whiteColor];
         _lastIndexPath = indexPath;
     }
     
@@ -147,23 +148,32 @@
         return;
     }
     NSString *sItem = self.optionArray[oldRow];
+    NSString *sTitle = [NSString stringWithFormat:@"%@ (%@)", self.questionTitle,sItem];
     
+    NSMutableAttributedString *str = [[NSMutableAttributedString alloc] initWithString:sTitle];
     
     if ( [sItem isEqualToString:self.questionAnswer])
     {
-        msg = @"回答正确";
-        [SVProgressHUD dismiss];
+        msg = @"回答正确!";
+        //[SVProgressHUD dismiss];
         
-        [SVProgressHUD showSuccessWithStatus:msg];
-        self.labelAnswer.textColor = [UIColor blueColor];
+        //[SVProgressHUD showSuccessWithStatus:msg];
+        self.txtTip.text = msg;
+        self.txtTip.textColor = [UIColor WTcolorWithHexString:@"#22ac38"];
+        self.labelAnswer.textColor = [UIColor WTcolorWithHexString:@"#82624a"];
+        [str addAttribute:NSForegroundColorAttributeName value:[UIColor WTcolorWithHexString:@"#22ac38"] range:NSMakeRange(sTitle.length-2,1)];
     } else
     {
-        msg = @"回答错误";
-        [SVProgressHUD dismiss];
+        msg = [NSString stringWithFormat:@"回答错误!  正确答案为%@", self.questionAnswer];
+        //[SVProgressHUD dismiss];
         
-        [SVProgressHUD showErrorWithStatus:msg];
-        self.labelAnswer.textColor = [UIColor redColor];
+        //[SVProgressHUD showErrorWithStatus:msg];
+        self.txtTip.text = msg;
+        self.txtTip.textColor = [UIColor WTcolorWithHexString:@"#e83828"];
+        self.labelAnswer.textColor = [UIColor WTcolorWithHexString:@"#82624a"];
+        [str addAttribute:NSForegroundColorAttributeName value:[UIColor WTcolorWithHexString:@"#e83828"] range:NSMakeRange(sTitle.length-2,1)];
     }
+    self.labelQuestion.attributedText = str;
     
     [self.labelAnswer setHidden:NO];
     CGFloat fHeight = [self getLabelHeight:self.labelAnswer.text];
