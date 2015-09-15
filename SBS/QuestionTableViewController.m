@@ -134,7 +134,7 @@
     // 該行要顯示的內容
     // 計算出顯示完內容需要的最小尺寸
     CGSize size = [sText sizeWithFont:font constrainedToSize:CGSizeMake(contentWidth, 1000.0f) lineBreakMode:NSLineBreakByWordWrapping];
-    return MAX(size.height, 44)+10;
+    return MAX(size.height, 44)+20;
 }
 
 - (IBAction)confirmAnswer:(UIButton *)sender {
