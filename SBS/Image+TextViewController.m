@@ -176,7 +176,7 @@
         paragraphStyle.firstLineHeadIndent = 20.0f;
         
         NSDictionary *ats = @{
-                              NSFontAttributeName : [UIFont systemFontOfSize:SMALLFONT],
+                              NSFontAttributeName : [UIFont systemFontOfSize:17],
                               NSParagraphStyleAttributeName : paragraphStyle,
                               };
         

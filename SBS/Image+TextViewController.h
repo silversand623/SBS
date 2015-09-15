@@ -9,9 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "MWPhotoBrowser.h"
 
-@class FSImageViewerViewController;
-
-
 @interface Image_TextViewController : UIViewController<UITableViewDelegate,UITableViewDataSource,MWPhotoBrowserDelegate,UITextViewDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
@@ -27,8 +24,6 @@
 
 @property (nonatomic, strong) NSString *sIndex;
 @property (nonatomic, strong) NSString *sTotal;
-
-@property(strong, nonatomic) FSImageViewerViewController *imageViewController;
 
 @property (nonatomic, strong) NSMutableArray *photos;
 
