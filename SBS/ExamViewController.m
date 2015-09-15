@@ -109,7 +109,6 @@
     }
     
     NSDictionary* dic = [self.list objectAtIndex:indexPath.row];
-    cell.numLable.text =[NSString stringWithFormat: @"%d", indexPath.row+1];
     cell.textLable1.text = [dic objectForKey:@"S_name"];
     
     return cell;

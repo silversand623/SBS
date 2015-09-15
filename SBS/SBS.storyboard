@@ -450,13 +450,29 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Um1-Q9-NnS">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Image_Text" id="Um1-Q9-NnS" customClass="ImageVideoCell">
                                         <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Um1-Q9-NnS" id="toL-O8-L9e">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" id="Oop-40-DZG">
+                                                    <rect key="frame" x="10" y="0.0" width="310" height="40"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="RnA-gq-NHl" id="8hL-fk-xI8"/>
+                                                    </connections>
+                                                </textView>
+                                            </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="viewDetail" destination="Oop-40-DZG" id="dWd-L3-L1W"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -493,7 +509,7 @@
                     <connections>
                         <outlet property="currentPage" destination="Q2m-xf-fy1" id="nOJ-HT-JeT"/>
                         <outlet property="imageView" destination="ru6-in-9z3" id="n6q-XT-cBe"/>
-                        <outlet property="tableView" destination="2Pw-h2-fR1" id="a9c-Au-VOO"/>
+                        <outlet property="tableView" destination="2Pw-h2-fR1" id="wkN-lE-H9j"/>
                         <outlet property="totalPage" destination="X0g-hq-QIB" id="Ful-Ok-uaj"/>
                     </connections>
                 </viewController>

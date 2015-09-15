@@ -12,7 +12,7 @@
 @class FSImageViewerViewController;
 
 
-@interface Image_TextViewController : UIViewController<UITableViewDelegate,UITableViewDataSource,MWPhotoBrowserDelegate>
+@interface Image_TextViewController : UIViewController<UITableViewDelegate,UITableViewDataSource,MWPhotoBrowserDelegate,UITextViewDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;

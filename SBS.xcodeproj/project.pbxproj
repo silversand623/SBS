@@ -60,6 +60,7 @@
 		3C6AED551B55F5AE008DD35D /* ExamDevicesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C6AED541B55F5AE008DD35D /* ExamDevicesTableViewController.m */; };
 		3CA2AB5B1B29742C00BAAB63 /* SBS.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CA2AB5A1B29742C00BAAB63 /* SBS.storyboard */; };
 		3CCAF6331BA6A92900DC0A3A /* video.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CCAF6321BA6A92900DC0A3A /* video.png */; };
+		3CCAF6361BA6C83200DC0A3A /* ImageVideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CCAF6351BA6C83200DC0A3A /* ImageVideoCell.m */; };
 		3CD160F61B57A58A009C2A36 /* StartExamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CD160F51B57A58A009C2A36 /* StartExamViewController.m */; };
 		3CD160F91B57A66C009C2A36 /* CountDownViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CD160F81B57A66C009C2A36 /* CountDownViewController.m */; };
 		3CFAF4A31B5F3DC000FCF443 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CFAF4A11B5F3DC000FCF443 /* 1.png */; };
@@ -201,6 +202,8 @@
 		3C6AED541B55F5AE008DD35D /* ExamDevicesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExamDevicesTableViewController.m; sourceTree = "<group>"; };
 		3CA2AB5A1B29742C00BAAB63 /* SBS.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SBS.storyboard; sourceTree = "<group>"; };
 		3CCAF6321BA6A92900DC0A3A /* video.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = video.png; path = image/video.png; sourceTree = "<group>"; };
+		3CCAF6341BA6C83200DC0A3A /* ImageVideoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageVideoCell.h; sourceTree = "<group>"; };
+		3CCAF6351BA6C83200DC0A3A /* ImageVideoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageVideoCell.m; sourceTree = "<group>"; };
 		3CD160F41B57A58A009C2A36 /* StartExamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartExamViewController.h; sourceTree = "<group>"; };
 		3CD160F51B57A58A009C2A36 /* StartExamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartExamViewController.m; sourceTree = "<group>"; };
 		3CD160F71B57A66C009C2A36 /* CountDownViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountDownViewController.h; sourceTree = "<group>"; };
@@ -411,6 +414,8 @@
 				3CD160F81B57A66C009C2A36 /* CountDownViewController.m */,
 				3C34A0121B5F2D88005C1C58 /* CustonTabViewController.h */,
 				3C34A0131B5F2D89005C1C58 /* CustonTabViewController.m */,
+				3CCAF6341BA6C83200DC0A3A /* ImageVideoCell.h */,
+				3CCAF6351BA6C83200DC0A3A /* ImageVideoCell.m */,
 			);
 			path = SBS;
 			sourceTree = "<group>";
@@ -768,6 +773,7 @@
 				1397D7C918ACB48100C5E24A /* LoginViewController.m in Sources */,
 				3CFAF51A1B61FB2200FCF443 /* WTImageViewer.m in Sources */,
 				3CFAF5181B61FB2200FCF443 /* WTCycleScrollView.m in Sources */,
+				3CCAF6361BA6C83200DC0A3A /* ImageVideoCell.m in Sources */,
 				AD6E98861925D581006C4A7A /* UIImageView+LK.m in Sources */,
 				3CFAF5111B61FB2200FCF443 /* UIButton+WTRequestCenter.m in Sources */,
 				3CFAF50F1B61FB2200FCF443 /* UIAlertView+WTRequestCenter.m in Sources */,
