@@ -14,7 +14,7 @@
 #import "UIKit+WTRequestCenter.h"
 #import "UIImageView+WTRequestCenter.h"
 #import "ScanCodeController.h"
-//#define SIMULATOR 1
+
 
 @interface LoginViewController ()
 @property(nonatomic,strong) NSString *IP;
@@ -128,24 +128,7 @@
                                    ((AppDelegate*)[[UIApplication sharedApplication] delegate]).Uid =[userDic objectForKey:@"uniquID"];
                                    NSLog(@"%@\n",[userDic objectForKey:@"uniquID"]);
                                    ////////
-#ifndef SIMULATOR
-                                   /*
-                                   ZBarReaderViewController *reader = [ZBarReaderViewController new];
-                                   reader.readerDelegate = self;
-                                   ZBarImageScanner *scanner = reader.scanner;
-                                   [scanner setSymbology: ZBAR_I25
-                                                  config: ZBAR_CFG_ENABLE
-                                                      to: 0];
-                                   [self presentViewController:reader animated:YES completion:nil];
-                                    */
-                                   ScanCodeController *viewControl = [[ScanCodeController alloc]init];
-                                   [self presentViewController:viewControl animated:YES completion:nil];
-                                   //[self.navigationController pushViewController:viewControl animated:YES];
-                                   
-#endif
-                                   
-#ifdef SIMULATOR
-                                   ((AppDelegate*)[[UIApplication sharedApplication] delegate]).modelName = @"TY000112345678NUI0300051ADC00";
+                                   //((AppDelegate*)[[UIApplication sharedApplication] delegate]).modelName = @"TY000112345678NUI0300051ADC00";
                                    //全功能急救人140301
                                    static  NSString *controllerId =@"swipe";
                                    //2.获取UIStoryboard对象
@@ -154,8 +137,6 @@
                                    ScanCodeController *viewController = [storyboard instantiateViewControllerWithIdentifier:controllerId];
                                    
                                    [self presentViewController:viewController animated:YES completion:nil];
-
-#endif
                                    
                                } else
                                {

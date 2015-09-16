@@ -9,6 +9,8 @@
 #import "ScanCodeController.h"
 #import "AppDelegate.h"
 #import "CustonTabViewController.h"
+#import "UIBarButtonItem+DefaultBackButton.h"
+#define SIMULATOR 1
 
 @interface ScanCodeController ()
 
@@ -20,6 +22,14 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(closeScan) name:@"closeSwipe" object:nil];
+    
+    
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem backButtonWith:@"登录"
+                                                                      Width:75
+                                                                        tintColor:[UIColor whiteColor]
+                                                                        target:self
+                                                                        andAction:@selector(closeScan)];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -27,19 +37,10 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 
 - (IBAction)scanCode:(UIButton *)sender {
     
+#ifdef SIMULATOR
     ((AppDelegate*)[[UIApplication sharedApplication] delegate]).modelName = @"TY000112345678NUI0300051ADC00";
     //全功能急救人140301
     static  NSString *controllerId =@"customTab";
@@ -49,14 +50,43 @@
     CustonTabViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:controllerId];
     
     [self presentViewController:viewController animated:YES completion:nil];
-    //[self.navigationController popViewControllerAnimated:NO];
-     
-    //[self dismissViewControllerAnimated:NO completion:nil];
+#endif
+
+#ifndef SIMULATOR
+     ZBarReaderViewController *reader = [ZBarReaderViewController new];
+     reader.readerDelegate = self;
+     ZBarImageScanner *scanner = reader.scanner;
+     [scanner setSymbology: ZBAR_I25
+     config: ZBAR_CFG_ENABLE
+     to: 0];
+     [self presentViewController:reader animated:YES completion:nil];
+#endif
 }
 
 - (void)closeScan
 {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)imagePickerController: (UIImagePickerController*)reader didFinishPickingMediaWithInfo: (NSDictionary*) info
+{
+    id<NSFastEnumeration> results =  [info objectForKey: ZBarReaderControllerResults];
+    
+    NSString *name = [[NSString alloc] init];
+    for(ZBarSymbol *symbol in results)
+    {
+        name = symbol.data;
+        break;
+    }
+    [reader dismissViewControllerAnimated:YES completion:^(){
+        
+        ((AppDelegate*)[[UIApplication sharedApplication] delegate]).modelName = name;
+        //全功能急救人140301
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"SBS" bundle:nil];
+        
+        [self presentViewController:[storyboard instantiateInitialViewController] animated:YES completion:nil];
+    }];
+    
 }
 
 @end

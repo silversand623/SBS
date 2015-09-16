@@ -12,6 +12,7 @@
 #import "UIKit+WTRequestCenter.h"
 #import "UIImageView+WTRequestCenter.h"
 #import "UIImage+WTRequestCenter.h"
+#import "UIBarButtonItem+DefaultBackButton.h"
 
 @interface SkillViewController()
 @property(strong,nonatomic)NSArray *list;
@@ -42,7 +43,13 @@
     self.list = [[NSArray alloc]init];
     //self.edgesForExtendedLayout = UIRectEdgeNone;
     
-    self.navigationItem.leftBarButtonItem =[[UIBarButtonItem alloc] initWithTitle:@"扫一扫" style:UIBarButtonItemStylePlain target:self action:@selector(backToScan)];
+    //self.navigationItem.leftBarButtonItem =[[UIBarButtonItem alloc] initWithTitle:@"扫一扫" style:UIBarButtonItemStylePlain target:self action:@selector(backToScan)];
+    
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem backButtonWith:@"扫一扫"
+                                                                      Width:100
+                                                                  tintColor:[UIColor whiteColor]
+                                                                     target:self
+                                                                  andAction:@selector(backToScan)];
     
     [self getModelInfo];
     //[self.navigationController setHidesBarsOnTap:NO];
