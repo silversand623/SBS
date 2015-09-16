@@ -13,7 +13,8 @@
 #import "WTNetWork.h"
 #import "UIKit+WTRequestCenter.h"
 #import "UIImageView+WTRequestCenter.h"
-#define SIMULATOR 1
+#import "ScanCodeController.h"
+//#define SIMULATOR 1
 
 @interface LoginViewController ()
 @property(nonatomic,strong) NSString *IP;
@@ -128,6 +129,7 @@
                                    NSLog(@"%@\n",[userDic objectForKey:@"uniquID"]);
                                    ////////
 #ifndef SIMULATOR
+                                   /*
                                    ZBarReaderViewController *reader = [ZBarReaderViewController new];
                                    reader.readerDelegate = self;
                                    ZBarImageScanner *scanner = reader.scanner;
@@ -135,14 +137,23 @@
                                                   config: ZBAR_CFG_ENABLE
                                                       to: 0];
                                    [self presentViewController:reader animated:YES completion:nil];
+                                    */
+                                   ScanCodeController *viewControl = [[ScanCodeController alloc]init];
+                                   [self presentViewController:viewControl animated:YES completion:nil];
+                                   //[self.navigationController pushViewController:viewControl animated:YES];
+                                   
 #endif
                                    
 #ifdef SIMULATOR
                                    ((AppDelegate*)[[UIApplication sharedApplication] delegate]).modelName = @"TY000112345678NUI0300051ADC00";
                                    //全功能急救人140301
+                                   static  NSString *controllerId =@"swipe";
+                                   //2.获取UIStoryboard对象
                                    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"SBS" bundle:nil];
+                                   //3.从storyboard取得newViewCtroller对象，通过Identifier区分
+                                   ScanCodeController *viewController = [storyboard instantiateViewControllerWithIdentifier:controllerId];
                                    
-                                   [self presentViewController:[storyboard instantiateInitialViewController] animated:YES completion:nil];
+                                   [self presentViewController:viewController animated:YES completion:nil];
 
 #endif
                                    

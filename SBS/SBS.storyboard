@@ -1,14 +1,53 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14A261i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="hLz-d0-Iqo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A261i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="hLz-d0-Iqo">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <scenes>
+        <!--扫一扫-->
+        <scene sceneID="PE6-FA-N5a">
+            <objects>
+                <viewController storyboardIdentifier="swipe" id="rwC-eq-I8p" customClass="ScanCodeController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jqo-gT-pfS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="点击此处，开始扫描" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ubM-rU-ACK">
+                                <rect key="frame" x="60" y="330" width="200" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="wYb-By-w0p">
+                                <rect key="frame" x="60" y="100" width="200" height="280"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="scanCode:" destination="rwC-eq-I8p" eventType="touchUpInside" id="pz9-yh-kb5"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sweep.png" id="Ibt-8S-Teu">
+                                <rect key="frame" x="60" y="100" width="200" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="扫一扫" id="Nqb-lL-kmL"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l7W-nF-wqK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1063" y="-292"/>
+        </scene>
         <!--Custon Tab View Controller-->
         <scene sceneID="FtS-mh-rpI">
             <objects>
-                <tabBarController definesPresentationContext="YES" id="hLz-d0-Iqo" customClass="CustonTabViewController" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="customTab" definesPresentationContext="YES" id="hLz-d0-Iqo" customClass="CustonTabViewController" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Lhz-ow-kze"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="OIo-lZ-Cwy">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
@@ -1043,11 +1082,12 @@
     <resources>
         <image name="7s.png" width="639" height="119"/>
         <image name="bluebutton.png" width="600" height="80"/>
-        <image name="examine-1.png" width="30" height="30"/>
+        <image name="examine-1.png" width="187" height="185"/>
         <image name="graybutton.png" width="573" height="81"/>
         <image name="personal-1.png" width="30" height="30"/>
         <image name="practice-1.png" width="30" height="30"/>
         <image name="practice-2.png" width="30" height="30"/>
+        <image name="sweep.png" width="187" height="185"/>
         <image name="user.png" width="180" height="180"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
