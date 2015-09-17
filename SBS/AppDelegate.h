@@ -15,4 +15,5 @@
 @property (strong, nonatomic) NSString *modelName;
 @property (strong, nonatomic) NSString *modelID;
 @property (strong, nonatomic) NSString *skillID;
+@property (strong, nonatomic) NSString *logID;
 @end

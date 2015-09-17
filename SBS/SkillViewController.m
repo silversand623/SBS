@@ -179,6 +179,7 @@
                            NSDictionary* userDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&jsonError];
                            if ([userDic objectForKey:@"M_Name" ] != nil)
                            {
+                               ((AppDelegate*)[[UIApplication sharedApplication] delegate]).modelID = [NSString stringWithFormat:@"%@",[userDic objectForKey:@"M_id"]];
                                self.list =[userDic objectForKey:@"SkillList" ];
                                [self.tableView reloadData];
                                
@@ -207,7 +208,7 @@
     if ([destination respondsToSelector:@selector(setData:)]) {
         [destination setValue:[dic objectForKey:@"S_id"] forKey:@"data"];
     }
-    
+    ((AppDelegate*)[[UIApplication sharedApplication] delegate]).skillID = [dic objectForKey:@"S_id"];
 }
 
 @end

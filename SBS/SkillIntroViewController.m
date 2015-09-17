@@ -89,6 +89,8 @@
                            if (!jsonError) {
                                if (self.detailInfo.count != 0)
                                {
+                                   [self addStartLog];
+                                   
                                    NSDictionary * dic = [self.detailInfo objectAtIndex:0];
                                    NSString * imageUrl =[NSString stringWithFormat:@"http://%@%@",BaseUrl,[dic objectForKey:@"HeadPicPath"]];
                                    __weak UIImageView *weakImageView = self.InfoPic;
@@ -139,6 +141,48 @@
 
 -(void)viewWillDisappear:(BOOL)animated
 {
+    
+}
+
+-(void) addStartLog
+{
+    NSUserDefaults *defaults =[NSUserDefaults standardUserDefaults];
+    if ([defaults objectForKey:@"ipconfig"]==nil) {
+        return;
+    }
+    NSString* uniID =((AppDelegate*)[[UIApplication sharedApplication] delegate]).Uid;
+    
+    NSString *BaseUrl=[defaults objectForKey:@"ipconfig"];
+    NSString *modId = ((AppDelegate*)[[UIApplication sharedApplication] delegate]).modelID;
+    NSString *skillId = ((AppDelegate*)[[UIApplication sharedApplication] delegate]).skillID;
+    NSString *user = [defaults objectForKey:@"username"];
+    
+    NSString *url = [NSString stringWithFormat:@"http://%@/handlers/LogAddHandler.ashx?M_id=%@&S_id=%@&name=%@&uniquid=%@",BaseUrl,modId,skillId,user,[uniID stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+    
+    
+    [WTRequestCenter getWithURL:url parameters:nil option:WTRequestCenterCachePolicyNormal
+                       finished:^(NSURLResponse *response, NSData *data) {
+                           //[SVProgressHUD dismiss];
+                           NSError *jsonError = nil;
+                           NSDictionary *userDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&jsonError];
+                           if (!jsonError) {
+                               if ([[userDic objectForKey:@"result"] isEqualToString:@"-1"])
+                               {
+                                   //[SVProgressHUD showErrorWithStatus:[userDic objectForKey:@"Reason"]];
+                                   
+                               } else
+                               {
+                                   ((AppDelegate*)[[UIApplication sharedApplication] delegate]).logID = [userDic objectForKey:@"result"];
+                               }
+                           } else
+                           {
+                               //[SVProgressHUD showErrorWithStatus:[jsonError localizedDescription]];
+                           }
+                           
+                           
+                       }failed:^(NSURLResponse *response, NSError *error) {
+                           //[SVProgressHUD showErrorWithStatus:[error localizedDescription]];
+                       }];
     
 }
 
