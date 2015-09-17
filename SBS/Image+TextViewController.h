@@ -30,5 +30,6 @@
 @property (nonatomic, strong) NSMutableArray *thumbs;
 @property (weak, nonatomic) IBOutlet UILabel *currentPage;
 @property (weak, nonatomic) IBOutlet UILabel *totalPage;
+@property (weak, nonatomic) IBOutlet UILabel *labelMore;
 
 @end

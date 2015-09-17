@@ -37,6 +37,7 @@
         NSIndexPath *indexPath = [NSIndexPath indexPathForItem:self.questionContent.count-1 inSection:0];
         [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom animated:NO];
     }
+    self.labelQuestion.text = [NSString stringWithFormat:@"%@ ( )", self.questionTitle];
     
     // 设置UIScrollView的滚动范围（内容大小）
     _scrollView.contentSize = CGSizeMake(320, 480);
@@ -81,7 +82,7 @@
         if (![item isEqualToString:@""]) {
             cell.textLabel.text = [[NSString alloc] initWithFormat:@"%@. %@",self.optionArray[indexPath.row],item];
             cell.textLabel.numberOfLines=0;
-            self.labelQuestion.text = [NSString stringWithFormat:@"%@ ( )", self.questionTitle];
+            
         }
     }
     

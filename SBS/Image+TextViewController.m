@@ -39,8 +39,10 @@
                                if (temp != nil) {
                                    //[SVProgressHUD showSuccessWithStatus:@"图片加载成功"];
                                    self.imageView.image = temp;
+                                   self.labelMore.hidden = NO;
                                    self.imageView.onTouchTapBlock = ^(UIImageView * view)
                                    {
+                                       
                                        [self imageClicked];
                                        
                                    };
