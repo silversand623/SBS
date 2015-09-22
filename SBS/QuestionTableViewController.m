@@ -123,19 +123,19 @@
         NSString *content = [self.questionContent objectAtIndex:indexPath.row];
         return [self getLabelHeight:content];
     }
-    return 44;
+    return 40;
 }
 
 -(CGFloat)getLabelHeight:(NSString *)sText {
     // 列寬
     CGFloat contentWidth = 280;
     // 用何種字體進行顯示
-    UIFont *font = [UIFont systemFontOfSize:17];
+    UIFont *font = [UIFont systemFontOfSize:16];
     
     // 該行要顯示的內容
     // 計算出顯示完內容需要的最小尺寸
     CGSize size = [sText sizeWithFont:font constrainedToSize:CGSizeMake(contentWidth, 1000.0f) lineBreakMode:NSLineBreakByWordWrapping];
-    return MAX(size.height, 44)+20;
+    return MAX(size.height, 38)+2;
 }
 
 - (IBAction)confirmAnswer:(UIButton *)sender {

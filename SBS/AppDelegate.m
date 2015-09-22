@@ -35,8 +35,13 @@
     [bar setBarTintColor:[UIColor WTcolorWithHexString:@"#6a6a6a"]];
     [bar setTintColor:[UIColor whiteColor]];
     [bar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor],
-                                  NSFontAttributeName:[UIFont systemFontOfSize:20],
+                                  NSFontAttributeName:[UIFont systemFontOfSize:18],
                                   }];
+    UIBarButtonItem *barItem = [UIBarButtonItem appearance];
+    [barItem setTintColor:[UIColor whiteColor]];
+    [barItem setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor],
+                                  NSFontAttributeName:[UIFont systemFontOfSize:16],
+                                  } forState:UIControlStateNormal];
     
     [ZBarReaderView class];
     

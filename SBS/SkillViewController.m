@@ -46,13 +46,14 @@
     //self.navigationItem.leftBarButtonItem =[[UIBarButtonItem alloc] initWithTitle:@"扫一扫" style:UIBarButtonItemStylePlain target:self action:@selector(backToScan)];
     
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem backButtonWith:@"扫一扫"
-                                                                      Width:100
+                                                                      Width:90
                                                                   tintColor:[UIColor whiteColor]
                                                                      target:self
                                                                   andAction:@selector(backToScan)];
     
+    
     [self getModelInfo];
-    //[self.navigationController setHidesBarsOnTap:NO];
+    
     
 }
 

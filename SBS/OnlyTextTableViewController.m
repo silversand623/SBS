@@ -93,7 +93,8 @@
         
         NSDictionary *atsTitle = @{
                                    NSFontAttributeName : [UIFont systemFontOfSize:BIGFONT],
-                                   //NSForegroundColorAttributeName : [UIColor blueColor],
+                                   NSParagraphStyleAttributeName : paragraphStyle,
+                                   NSForegroundColorAttributeName : [UIColor WTcolorWithHexString:@"#5D7DA3"],
                                    };
         NSString *strTitle = [item objectForKey:@"smallTitle"];
         NSString *strTemp = [NSString stringWithFormat:@"%@\n",strTitle];
@@ -140,9 +141,9 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     OnlyTextCell *cell = (OnlyTextCell *)[self tableView:tableView cellForRowAtIndexPath:indexPath];
-    int nWidth = 320-40;
+    int nWidth = 320-20;
     
-    nWidth = [[UIScreen mainScreen] bounds].size.width -40;
+    nWidth = [[UIScreen mainScreen] bounds].size.width-20;
     
     CGRect bounds = cell.viewDetail.bounds;
     // 计算 text view 的高度
@@ -152,7 +153,7 @@
     cell.viewDetail.bounds = bounds;
     
     int nHeight = 0;
-    nHeight = MAX(newSize.height, 40)+10;
+    nHeight = MAX(newSize.height, 40);
     
     return nHeight;
 }

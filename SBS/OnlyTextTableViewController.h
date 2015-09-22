@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "MWPhotoBrowser.h"
-#define SMALLFONT 17
-#define BIGFONT 20
+#define SMALLFONT 16
+#define BIGFONT 18
 #define WIDTH 280
 
 

@@ -26,6 +26,7 @@
     
     [backButton setTitleEdgeInsets:UIEdgeInsetsMake(2, 2, 0, 0)];
     [backButton setTitle:title forState:UIControlStateNormal];
+    [[backButton titleLabel] setFont:[UIFont systemFontOfSize:16]];
     
     [backButton setTitleColor:color forState:UIControlStateNormal];
     const CGFloat* components = CGColorGetComponents(color.CGColor);
