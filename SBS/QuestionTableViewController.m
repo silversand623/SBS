@@ -59,7 +59,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (self.questionContent != nil) {
-        return self.questionContent.count;
+        return self.questionContent.count+1;
     } else
     {
         return 0;
@@ -139,7 +139,7 @@
         NSString *content = [self.questionContent objectAtIndex:indexPath.row];
         return [self getLabelHeight:content];
     }
-    return 40;
+    return 55;
 }
 
 -(CGFloat)getLabelHeight:(NSString *)sText {
@@ -151,7 +151,7 @@
     // 該行要顯示的內容
     // 計算出顯示完內容需要的最小尺寸
     CGSize size = [sText sizeWithFont:font constrainedToSize:CGSizeMake(contentWidth, 1000.0f) lineBreakMode:NSLineBreakByWordWrapping];
-    return MAX(size.height, 30)+10;
+    return MAX(size.height, 45)+10;
 }
 
 - (IBAction)confirmAnswer:(UIButton *)sender {
