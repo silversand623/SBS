@@ -60,12 +60,24 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (self.questionContent != nil) {
         return self.questionContent.count+1;
+        //return self.questionContent.count;
     } else
     {
         return 0;
     }
 }
 
+- (NSIndexPath *)tableView:(UITableView *)tv willSelectRowAtIndexPath:(NSIndexPath *)path
+{
+    //根据 NSIndexPath判定行是否可选。
+    
+    if (path.row != 0)
+    {
+        return path;
+    }
+    
+    return nil;
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *TableSampleIdentifier = @"Image_Text";
@@ -78,22 +90,34 @@
                 reuseIdentifier:TableSampleIdentifier];
         [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     }
+    int nCount = -1;
     
     if (self.questionContent != nil) {
-        NSString* item = [self.questionContent objectAtIndex:indexPath.row];
-        if (![item isEqualToString:@""]) {
-            cell.textLabel.text = [[NSString alloc] initWithFormat:@"%@. %@",self.optionArray[indexPath.row],item];
-            cell.textLabel.numberOfLines=0;
-            //resize the height of label
-            CGRect rect = cell.textLabel.frame;
-            rect.size.height = [self getLabelHeight:cell.textLabel.text]+10;
-            if (iOS8)
-            {
-                [cell.textLabel setFrame:CGRectMake(20, 0, rect.size.width, rect.size.height)];
-            } else if (iOS7) {
-                [cell.textLabel setFrame:rect];
+        nCount = indexPath.row;
+        NSString *sItem = @"";
+        if (nCount == 0) {
+            if ([_lastIndexPath row] > 0) {
+                sItem = self.optionArray[[_lastIndexPath row]-1];
             }
+            cell.textLabel.text = [NSString stringWithFormat:@"%@ (%@ )", self.questionTitle,sItem];
+            cell.textLabel.numberOfLines=0;
             
+        } else
+        {
+            NSString* item = [self.questionContent objectAtIndex:nCount-1];
+            if (![item isEqualToString:@""]) {
+                cell.textLabel.text = [[NSString alloc] initWithFormat:@"%@. %@",self.optionArray[nCount-1],item];
+                cell.textLabel.numberOfLines=0;
+            }
+        }
+        //resize the height of label
+        CGRect rect = cell.textLabel.frame;
+        rect.size.height = [self getLabelHeight:cell.textLabel.text]+10;
+        if (iOS8)
+        {
+            [cell.textLabel setFrame:CGRectMake(20, 0, rect.size.width, rect.size.height)];
+        } else if (iOS7) {
+            [cell.textLabel setFrame:rect];
         }
     }
     
@@ -123,21 +147,28 @@
         oldCell.backgroundColor = [UIColor whiteColor];
         _lastIndexPath = indexPath;
     }
-    NSString *sItem = self.optionArray[newRow];
+    NSString *sItem = self.optionArray[newRow-1];
     NSString *sTitle = [NSString stringWithFormat:@"%@ (%@)", self.questionTitle,sItem];
     
-    NSMutableAttributedString *str = [[NSMutableAttributedString alloc] initWithString:sTitle];
-    self.labelQuestion.attributedText = str;
+    NSIndexPath *path =  [NSIndexPath indexPathForItem:0 inSection:0];
+    UITableViewCell *firstCell = [tableView cellForRowAtIndexPath:path];
+    firstCell.textLabel.text = sTitle;
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    //[tableView reloadData];
 }
 
 //------------------TableView Cell Height------------------
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (self.questionContent != nil) {
-        NSString *content = [self.questionContent objectAtIndex:indexPath.row];
-        return [self getLabelHeight:content];
+        if (indexPath.row == 0) {
+            return 55;
+        }else
+        {
+            NSString *content = [self.questionContent objectAtIndex:indexPath.row-1];
+            return [self getLabelHeight:content];
+        }
     }
     return 55;
 }
@@ -164,7 +195,7 @@
         [SVProgressHUD showErrorWithStatus:msg];
         return;
     }
-    NSString *sItem = self.optionArray[oldRow];
+    NSString *sItem = self.optionArray[oldRow-1];
     NSString *sTitle = [NSString stringWithFormat:@"%@ (%@)", self.questionTitle,sItem];
     
     NSMutableAttributedString *str = [[NSMutableAttributedString alloc] initWithString:sTitle];
@@ -190,7 +221,11 @@
         self.labelAnswer.textColor = [UIColor WTcolorWithHexString:@"#82624a"];
         [str addAttribute:NSForegroundColorAttributeName value:[UIColor WTcolorWithHexString:@"#e83828"] range:NSMakeRange(sTitle.length-2,1)];
     }
-    self.labelQuestion.attributedText = str;
+    //self.labelQuestion.attributedText = str;
+    NSIndexPath *path =  [NSIndexPath indexPathForItem:0 inSection:0];
+    UITableViewCell *firstCell = [self.tableView cellForRowAtIndexPath:path];
+    //firstCell.textLabel.attributedText = str;
+    //[self.tableView reloadData];
     
     [self.labelAnswer setHidden:NO];
     CGFloat fHeight = [self getLabelHeight:self.labelAnswer.text];
