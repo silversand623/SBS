@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface StepViewCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UILabel *numLable;
 @property (weak, nonatomic) IBOutlet UILabel *textLable1;
 
 @end

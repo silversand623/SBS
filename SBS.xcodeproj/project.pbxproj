@@ -43,19 +43,28 @@
 		3C2EF7CE1B454083000BEFBC /* QuestionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C2EF7CD1B454083000BEFBC /* QuestionTableViewController.m */; };
 		3C34A0041B5E45A6005C1C58 /* bluebutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C349FF51B5E45A6005C1C58 /* bluebutton.png */; };
 		3C34A0051B5E45A6005C1C58 /* graybutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C349FF61B5E45A6005C1C58 /* graybutton.png */; };
-		3C34A0061B5E45A6005C1C58 /* examine-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C349FF71B5E45A6005C1C58 /* examine-1.png */; };
-		3C34A0071B5E45A6005C1C58 /* examine-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C349FF81B5E45A6005C1C58 /* examine-2.png */; };
 		3C34A00B1B5E45A6005C1C58 /* login-bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3C349FFC1B5E45A6005C1C58 /* login-bg.jpg */; };
 		3C34A00C1B5E45A6005C1C58 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C349FFD1B5E45A6005C1C58 /* logo.png */; };
 		3C34A00D1B5E45A6005C1C58 /* personal-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C349FFE1B5E45A6005C1C58 /* personal-1.png */; };
 		3C34A00E1B5E45A6005C1C58 /* personal-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C349FFF1B5E45A6005C1C58 /* personal-2.png */; };
-		3C34A00F1B5E45A6005C1C58 /* practice-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C34A0001B5E45A6005C1C58 /* practice-1.png */; };
-		3C34A0101B5E45A6005C1C58 /* practice-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C34A0011B5E45A6005C1C58 /* practice-2.png */; };
 		3C34A0111B5E45A6005C1C58 /* sweep.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C34A0021B5E45A6005C1C58 /* sweep.png */; };
 		3C34A0141B5F2D89005C1C58 /* CustonTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C34A0131B5F2D89005C1C58 /* CustonTabViewController.m */; };
 		3C465C3E1BA11528004372EB /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C465C3D1BA11528004372EB /* 4.png */; };
+		3C465C451BA15397004372EB /* personal-1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C465C411BA15397004372EB /* personal-1@2x.png */; };
+		3C465C461BA15397004372EB /* personal-2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C465C421BA15397004372EB /* personal-2@2x.png */; };
+		3C465C531BA15669004372EB /* practice-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C465C4F1BA15669004372EB /* practice-1.png */; };
+		3C465C541BA15669004372EB /* practice-1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C465C501BA15669004372EB /* practice-1@2x.png */; };
+		3C465C551BA15669004372EB /* practice-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C465C511BA15669004372EB /* practice-2.png */; };
+		3C465C561BA15669004372EB /* practice-2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C465C521BA15669004372EB /* practice-2@2x.png */; };
+		3C465C581BA261A5004372EB /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C465C571BA261A5004372EB /* user.png */; };
 		3C6AED551B55F5AE008DD35D /* ExamDevicesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C6AED541B55F5AE008DD35D /* ExamDevicesTableViewController.m */; };
+		3C9E7FDC1BA90765005A9C71 /* ScanCodeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9E7FDA1BA90765005A9C71 /* ScanCodeController.m */; };
 		3CA2AB5B1B29742C00BAAB63 /* SBS.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CA2AB5A1B29742C00BAAB63 /* SBS.storyboard */; };
+		3CB2B59D1BA966080047683D /* back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CB2B59C1BA966080047683D /* back@2x.png */; };
+		3CB2B5A01BA966150047683D /* UIBarButtonItem+DefaultBackButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB2B59F1BA966150047683D /* UIBarButtonItem+DefaultBackButton.m */; };
+		3CCAF6331BA6A92900DC0A3A /* video.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CCAF6321BA6A92900DC0A3A /* video.png */; };
+		3CCAF6361BA6C83200DC0A3A /* ImageVideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CCAF6351BA6C83200DC0A3A /* ImageVideoCell.m */; };
+		3CCAF6391BA809F100DC0A3A /* OnlyTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CCAF6381BA809F100DC0A3A /* OnlyTextCell.m */; };
 		3CD160F61B57A58A009C2A36 /* StartExamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CD160F51B57A58A009C2A36 /* StartExamViewController.m */; };
 		3CD160F91B57A66C009C2A36 /* CountDownViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CD160F81B57A66C009C2A36 /* CountDownViewController.m */; };
 		3CFAF4A31B5F3DC000FCF443 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CFAF4A11B5F3DC000FCF443 /* 1.png */; };
@@ -178,21 +187,34 @@
 		3C2EF7CD1B454083000BEFBC /* QuestionTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionTableViewController.m; sourceTree = "<group>"; };
 		3C349FF51B5E45A6005C1C58 /* bluebutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bluebutton.png; path = image/bluebutton.png; sourceTree = "<group>"; };
 		3C349FF61B5E45A6005C1C58 /* graybutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = graybutton.png; path = image/graybutton.png; sourceTree = "<group>"; };
-		3C349FF71B5E45A6005C1C58 /* examine-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "examine-1.png"; path = "image/examine-1.png"; sourceTree = "<group>"; };
-		3C349FF81B5E45A6005C1C58 /* examine-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "examine-2.png"; path = "image/examine-2.png"; sourceTree = "<group>"; };
 		3C349FFC1B5E45A6005C1C58 /* login-bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "login-bg.jpg"; path = "image/login-bg.jpg"; sourceTree = "<group>"; };
 		3C349FFD1B5E45A6005C1C58 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = image/logo.png; sourceTree = "<group>"; };
 		3C349FFE1B5E45A6005C1C58 /* personal-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "personal-1.png"; path = "image/personal-1.png"; sourceTree = "<group>"; };
 		3C349FFF1B5E45A6005C1C58 /* personal-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "personal-2.png"; path = "image/personal-2.png"; sourceTree = "<group>"; };
-		3C34A0001B5E45A6005C1C58 /* practice-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "practice-1.png"; path = "image/practice-1.png"; sourceTree = "<group>"; };
-		3C34A0011B5E45A6005C1C58 /* practice-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "practice-2.png"; path = "image/practice-2.png"; sourceTree = "<group>"; };
 		3C34A0021B5E45A6005C1C58 /* sweep.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sweep.png; path = image/sweep.png; sourceTree = "<group>"; };
 		3C34A0121B5F2D88005C1C58 /* CustonTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustonTabViewController.h; sourceTree = "<group>"; };
 		3C34A0131B5F2D89005C1C58 /* CustonTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustonTabViewController.m; sourceTree = "<group>"; };
 		3C465C3D1BA11528004372EB /* 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 4.png; path = image/4.png; sourceTree = "<group>"; };
+		3C465C411BA15397004372EB /* personal-1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "personal-1@2x.png"; path = "image/personal-1@2x.png"; sourceTree = "<group>"; };
+		3C465C421BA15397004372EB /* personal-2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "personal-2@2x.png"; path = "image/personal-2@2x.png"; sourceTree = "<group>"; };
+		3C465C4F1BA15669004372EB /* practice-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "practice-1.png"; path = "image/practice-1.png"; sourceTree = "<group>"; };
+		3C465C501BA15669004372EB /* practice-1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "practice-1@2x.png"; path = "image/practice-1@2x.png"; sourceTree = "<group>"; };
+		3C465C511BA15669004372EB /* practice-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "practice-2.png"; path = "image/practice-2.png"; sourceTree = "<group>"; };
+		3C465C521BA15669004372EB /* practice-2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "practice-2@2x.png"; path = "image/practice-2@2x.png"; sourceTree = "<group>"; };
+		3C465C571BA261A5004372EB /* user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = user.png; path = image/user.png; sourceTree = "<group>"; };
 		3C6AED531B55F5AE008DD35D /* ExamDevicesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamDevicesTableViewController.h; sourceTree = "<group>"; };
 		3C6AED541B55F5AE008DD35D /* ExamDevicesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExamDevicesTableViewController.m; sourceTree = "<group>"; };
+		3C9E7FD91BA90765005A9C71 /* ScanCodeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanCodeController.h; sourceTree = "<group>"; };
+		3C9E7FDA1BA90765005A9C71 /* ScanCodeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanCodeController.m; sourceTree = "<group>"; };
 		3CA2AB5A1B29742C00BAAB63 /* SBS.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SBS.storyboard; sourceTree = "<group>"; };
+		3CB2B59C1BA966080047683D /* back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "back@2x.png"; path = "image/back@2x.png"; sourceTree = "<group>"; };
+		3CB2B59E1BA966150047683D /* UIBarButtonItem+DefaultBackButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+DefaultBackButton.h"; sourceTree = "<group>"; };
+		3CB2B59F1BA966150047683D /* UIBarButtonItem+DefaultBackButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+DefaultBackButton.m"; sourceTree = "<group>"; };
+		3CCAF6321BA6A92900DC0A3A /* video.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = video.png; path = image/video.png; sourceTree = "<group>"; };
+		3CCAF6341BA6C83200DC0A3A /* ImageVideoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageVideoCell.h; sourceTree = "<group>"; };
+		3CCAF6351BA6C83200DC0A3A /* ImageVideoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageVideoCell.m; sourceTree = "<group>"; };
+		3CCAF6371BA809F100DC0A3A /* OnlyTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnlyTextCell.h; sourceTree = "<group>"; };
+		3CCAF6381BA809F100DC0A3A /* OnlyTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnlyTextCell.m; sourceTree = "<group>"; };
 		3CD160F41B57A58A009C2A36 /* StartExamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartExamViewController.h; sourceTree = "<group>"; };
 		3CD160F51B57A58A009C2A36 /* StartExamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartExamViewController.m; sourceTree = "<group>"; };
 		3CD160F71B57A66C009C2A36 /* CountDownViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountDownViewController.h; sourceTree = "<group>"; };
@@ -286,6 +308,15 @@
 		1333708718C5985600046548 /* image */ = {
 			isa = PBXGroup;
 			children = (
+				3CB2B59C1BA966080047683D /* back@2x.png */,
+				3CCAF6321BA6A92900DC0A3A /* video.png */,
+				3C465C571BA261A5004372EB /* user.png */,
+				3C465C4F1BA15669004372EB /* practice-1.png */,
+				3C465C501BA15669004372EB /* practice-1@2x.png */,
+				3C465C511BA15669004372EB /* practice-2.png */,
+				3C465C521BA15669004372EB /* practice-2@2x.png */,
+				3C465C411BA15397004372EB /* personal-1@2x.png */,
+				3C465C421BA15397004372EB /* personal-2@2x.png */,
 				3C465C3D1BA11528004372EB /* 4.png */,
 				3CFAF4A51B60CAD300FCF443 /* 3.png */,
 				3CFAF4A61B60CAD300FCF443 /* icon.png */,
@@ -295,14 +326,10 @@
 				3CFAF4A21B5F3DC000FCF443 /* 2.png */,
 				3C349FF51B5E45A6005C1C58 /* bluebutton.png */,
 				3C349FF61B5E45A6005C1C58 /* graybutton.png */,
-				3C349FF71B5E45A6005C1C58 /* examine-1.png */,
-				3C349FF81B5E45A6005C1C58 /* examine-2.png */,
 				3C349FFC1B5E45A6005C1C58 /* login-bg.jpg */,
 				3C349FFD1B5E45A6005C1C58 /* logo.png */,
 				3C349FFE1B5E45A6005C1C58 /* personal-1.png */,
 				3C349FFF1B5E45A6005C1C58 /* personal-2.png */,
-				3C34A0001B5E45A6005C1C58 /* practice-1.png */,
-				3C34A0011B5E45A6005C1C58 /* practice-2.png */,
 				3C34A0021B5E45A6005C1C58 /* sweep.png */,
 				1333708B18C5987600046548 /* 4s.png */,
 			);
@@ -357,6 +384,8 @@
 		1397D79718ACB3AF00C5E24A /* SBS */ = {
 			isa = PBXGroup;
 			children = (
+				3CB2B59E1BA966150047683D /* UIBarButtonItem+DefaultBackButton.h */,
+				3CB2B59F1BA966150047683D /* UIBarButtonItem+DefaultBackButton.m */,
 				3C2EF7811B428F9D000BEFBC /* TTViewController.h */,
 				3C2EF7821B428F9D000BEFBC /* TTViewController.m */,
 				3C2EF7461B395573000BEFBC /* PersonalInfoViewController.h */,
@@ -399,6 +428,12 @@
 				3CD160F81B57A66C009C2A36 /* CountDownViewController.m */,
 				3C34A0121B5F2D88005C1C58 /* CustonTabViewController.h */,
 				3C34A0131B5F2D89005C1C58 /* CustonTabViewController.m */,
+				3CCAF6341BA6C83200DC0A3A /* ImageVideoCell.h */,
+				3CCAF6351BA6C83200DC0A3A /* ImageVideoCell.m */,
+				3CCAF6371BA809F100DC0A3A /* OnlyTextCell.h */,
+				3CCAF6381BA809F100DC0A3A /* OnlyTextCell.m */,
+				3C9E7FD91BA90765005A9C71 /* ScanCodeController.h */,
+				3C9E7FDA1BA90765005A9C71 /* ScanCodeController.m */,
 			);
 			path = SBS;
 			sourceTree = "<group>";
@@ -648,31 +683,36 @@
 				ADB63EB619F0FCEB00E0E344 /* icon.png in Resources */,
 				3C34A00C1B5E45A6005C1C58 /* logo.png in Resources */,
 				1397D7F918ACBFAD00C5E24A /* zbar-back.png in Resources */,
-				3C34A0061B5E45A6005C1C58 /* examine-1.png in Resources */,
 				3CFAF4A91B60CAD300FCF443 /* 3.png in Resources */,
+				3CB2B59D1BA966080047683D /* back@2x.png in Resources */,
 				1397D79C18ACB3AF00C5E24A /* InfoPlist.strings in Resources */,
 				3C34A00B1B5E45A6005C1C58 /* login-bg.jpg in Resources */,
+				3C465C461BA15397004372EB /* personal-2@2x.png in Resources */,
 				AD6E98831925D581006C4A7A /* remind_noimage.png in Resources */,
 				3CFAF4A41B5F3DC000FCF443 /* 2.png in Resources */,
+				3C465C561BA15669004372EB /* practice-2@2x.png in Resources */,
 				3CFAF4A31B5F3DC000FCF443 /* 1.png in Resources */,
-				3C34A00F1B5E45A6005C1C58 /* practice-1.png in Resources */,
 				AD6E98841925D581006C4A7A /* remind_noimage@2x.png in Resources */,
 				1397D7FC18ACBFAD00C5E24A /* zbar-samples.png in Resources */,
+				3C465C581BA261A5004372EB /* user.png in Resources */,
 				1397D7FA18ACBFAD00C5E24A /* zbar-help.html in Resources */,
 				1397D7CA18ACB48100C5E24A /* LoginViewController.xib in Resources */,
 				3CFAF4AB1B60CAD300FCF443 /* loading.png in Resources */,
 				1333709218C5987600046548 /* 4s.png in Resources */,
 				3C465C3E1BA11528004372EB /* 4.png in Resources */,
 				3C34A00D1B5E45A6005C1C58 /* personal-1.png in Resources */,
-				3C34A0101B5E45A6005C1C58 /* practice-2.png in Resources */,
 				3CA2AB5B1B29742C00BAAB63 /* SBS.storyboard in Resources */,
 				3CFAF4AA1B60CAD300FCF443 /* icon.png in Resources */,
+				3C465C541BA15669004372EB /* practice-1@2x.png in Resources */,
 				1397D7FB18ACBFAD00C5E24A /* zbar-helpicons.png in Resources */,
 				3CFAF4AC1B60CAD300FCF443 /* unload.png in Resources */,
 				3C34A0041B5E45A6005C1C58 /* bluebutton.png in Resources */,
-				3C34A0071B5E45A6005C1C58 /* examine-2.png in Resources */,
+				3CCAF6331BA6A92900DC0A3A /* video.png in Resources */,
+				3C465C451BA15397004372EB /* personal-1@2x.png in Resources */,
+				3C465C551BA15669004372EB /* practice-2.png in Resources */,
 				3C34A0111B5E45A6005C1C58 /* sweep.png in Resources */,
 				3C34A00E1B5E45A6005C1C58 /* personal-2.png in Resources */,
+				3C465C531BA15669004372EB /* practice-1.png in Resources */,
 				3C34A0051B5E45A6005C1C58 /* graybutton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -739,6 +779,7 @@
 				1397D79E18ACB3AF00C5E24A /* main.m in Sources */,
 				3C2EF75A1B3D42E7000BEFBC /* CameraInfo.m in Sources */,
 				3C2EF7541B3D358E000BEFBC /* ChooseTimeViewController.m in Sources */,
+				3CCAF6391BA809F100DC0A3A /* OnlyTextCell.m in Sources */,
 				3CFAF5171B61FB2200FCF443 /* UIWebView+WTRequestCenter.m in Sources */,
 				3CFAF5101B61FB2200FCF443 /* UIApplication+WTRequestCenter.m in Sources */,
 				AD6E98851925D581006C4A7A /* THProgressView.m in Sources */,
@@ -749,9 +790,12 @@
 				13226A6718C5B61C00E9E276 /* StepViewCell.m in Sources */,
 				3C2EF7481B395573000BEFBC /* PersonalInfoViewController.m in Sources */,
 				3CFAF5131B61FB2200FCF443 /* UIDevice+WTRequestCenter.m in Sources */,
+				3CB2B5A01BA966150047683D /* UIBarButtonItem+DefaultBackButton.m in Sources */,
 				1397D7C918ACB48100C5E24A /* LoginViewController.m in Sources */,
 				3CFAF51A1B61FB2200FCF443 /* WTImageViewer.m in Sources */,
+				3C9E7FDC1BA90765005A9C71 /* ScanCodeController.m in Sources */,
 				3CFAF5181B61FB2200FCF443 /* WTCycleScrollView.m in Sources */,
+				3CCAF6361BA6C83200DC0A3A /* ImageVideoCell.m in Sources */,
 				AD6E98861925D581006C4A7A /* UIImageView+LK.m in Sources */,
 				3CFAF5111B61FB2200FCF443 /* UIButton+WTRequestCenter.m in Sources */,
 				3CFAF50F1B61FB2200FCF443 /* UIAlertView+WTRequestCenter.m in Sources */,

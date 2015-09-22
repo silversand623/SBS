@@ -35,6 +35,12 @@
 */
 
 - (IBAction)exitToLogin:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    
+    
+    [self dismissViewControllerAnimated:NO completion:nil];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"closeSwipe" object:nil];
 }
+
 @end

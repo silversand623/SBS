@@ -8,6 +8,9 @@
 
 #import "QuestionTableViewController.h"
 #import "SVProgressHUD.h"
+#import "UIColor+WTRequestCenter.h"
+#define iOS7 ([[UIDevice currentDevice].systemVersion doubleValue] >= 7.0)
+#define iOS8 ([[UIDevice currentDevice].systemVersion doubleValue] >= 8.0)
 
 @interface QuestionTableViewController ()
 @property(strong,nonatomic)NSIndexPath *lastIndexPath;
@@ -17,6 +20,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.currentPage.text = self.sIndex;
+    self.totalPage.text = self.sTotal;
     
     _optionArray = [[NSArray alloc] initWithObjects:@"A",@"B",@"C",@"D",@"E",@"F",@"G",@"H",@"I",nil];
     
@@ -33,9 +39,10 @@
         NSIndexPath *indexPath = [NSIndexPath indexPathForItem:self.questionContent.count-1 inSection:0];
         [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom animated:NO];
     }
+    self.labelQuestion.text = [NSString stringWithFormat:@"%@ ( )", self.questionTitle];
     
     // 设置UIScrollView的滚动范围（内容大小）
-    _scrollView.contentSize = CGSizeMake(320, 500);
+    _scrollView.contentSize = CGSizeMake(320, 480);
     // 隐藏水平滚动条
     _scrollView.showsHorizontalScrollIndicator = NO;
     _scrollView.showsVerticalScrollIndicator = YES;
@@ -77,16 +84,25 @@
         if (![item isEqualToString:@""]) {
             cell.textLabel.text = [[NSString alloc] initWithFormat:@"%@. %@",self.optionArray[indexPath.row],item];
             cell.textLabel.numberOfLines=0;
-            self.labelQuestion.text = [NSString stringWithFormat:@"%@", self.questionTitle];
+            //resize the height of label
+            CGRect rect = cell.textLabel.frame;
+            rect.size.height = [self getLabelHeight:cell.textLabel.text]+10;
+            if (iOS8)
+            {
+                [cell.textLabel setFrame:CGRectMake(20, 0, rect.size.width, rect.size.height)];
+            } else if (iOS7) {
+                [cell.textLabel setFrame:rect];
+            }
+            
         }
     }
     
     // 重用机制，如果选中的行正好要重用
     int oldRow = (_lastIndexPath != nil) ? [_lastIndexPath row] : -1;
     if (oldRow == indexPath.row) {
-        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        cell.backgroundColor = [UIColor WTcolorWithHexString:@"#ced8e3"];
     } else {
-        cell.accessoryType = UITableViewCellAccessoryNone;
+        cell.backgroundColor = [UIColor whiteColor];
     }
     
     return cell;
@@ -101,10 +117,10 @@
     if(newRow != oldRow)
     {
         UITableViewCell *newCell = [tableView cellForRowAtIndexPath:indexPath];
-        newCell.accessoryType = UITableViewCellAccessoryCheckmark;
+        newCell.backgroundColor = [UIColor WTcolorWithHexString:@"#ced8e3"];
         
         UITableViewCell *oldCell = [tableView cellForRowAtIndexPath:_lastIndexPath];
-        oldCell.accessoryType = UITableViewCellAccessoryNone;
+        oldCell.backgroundColor = [UIColor whiteColor];
         _lastIndexPath = indexPath;
     }
     
@@ -118,19 +134,19 @@
         NSString *content = [self.questionContent objectAtIndex:indexPath.row];
         return [self getLabelHeight:content];
     }
-    return 44;
+    return 40;
 }
 
 -(CGFloat)getLabelHeight:(NSString *)sText {
     // 列寬
     CGFloat contentWidth = 280;
     // 用何種字體進行顯示
-    UIFont *font = [UIFont systemFontOfSize:17];
+    UIFont *font = [UIFont systemFontOfSize:18];
     
     // 該行要顯示的內容
     // 計算出顯示完內容需要的最小尺寸
     CGSize size = [sText sizeWithFont:font constrainedToSize:CGSizeMake(contentWidth, 1000.0f) lineBreakMode:NSLineBreakByWordWrapping];
-    return MAX(size.height, 44)+10;
+    return MAX(size.height, 30)+10;
 }
 
 - (IBAction)confirmAnswer:(UIButton *)sender {
@@ -144,23 +160,32 @@
         return;
     }
     NSString *sItem = self.optionArray[oldRow];
+    NSString *sTitle = [NSString stringWithFormat:@"%@ (%@)", self.questionTitle,sItem];
     
+    NSMutableAttributedString *str = [[NSMutableAttributedString alloc] initWithString:sTitle];
     
     if ( [sItem isEqualToString:self.questionAnswer])
     {
-        msg = @"回答正确";
-        [SVProgressHUD dismiss];
+        msg = @"回答正确!";
+        //[SVProgressHUD dismiss];
         
-        [SVProgressHUD showSuccessWithStatus:msg];
-        self.labelAnswer.textColor = [UIColor blueColor];
+        //[SVProgressHUD showSuccessWithStatus:msg];
+        self.txtTip.text = msg;
+        self.txtTip.textColor = [UIColor WTcolorWithHexString:@"#22ac38"];
+        self.labelAnswer.textColor = [UIColor WTcolorWithHexString:@"#82624a"];
+        [str addAttribute:NSForegroundColorAttributeName value:[UIColor WTcolorWithHexString:@"#22ac38"] range:NSMakeRange(sTitle.length-2,1)];
     } else
     {
-        msg = @"回答错误";
-        [SVProgressHUD dismiss];
+        msg = [NSString stringWithFormat:@"回答错误!  正确答案为%@", self.questionAnswer];
+        //[SVProgressHUD dismiss];
         
-        [SVProgressHUD showErrorWithStatus:msg];
-        self.labelAnswer.textColor = [UIColor redColor];
+        //[SVProgressHUD showErrorWithStatus:msg];
+        self.txtTip.text = msg;
+        self.txtTip.textColor = [UIColor WTcolorWithHexString:@"#e83828"];
+        self.labelAnswer.textColor = [UIColor WTcolorWithHexString:@"#82624a"];
+        [str addAttribute:NSForegroundColorAttributeName value:[UIColor WTcolorWithHexString:@"#e83828"] range:NSMakeRange(sTitle.length-2,1)];
     }
+    self.labelQuestion.attributedText = str;
     
     [self.labelAnswer setHidden:NO];
     CGFloat fHeight = [self getLabelHeight:self.labelAnswer.text];

@@ -12,6 +12,7 @@
 #import "UIKit+WTRequestCenter.h"
 #import "UIImageView+WTRequestCenter.h"
 #import "UIImage+WTRequestCenter.h"
+#import "UIBarButtonItem+DefaultBackButton.h"
 
 @interface SkillViewController()
 @property(strong,nonatomic)NSArray *list;
@@ -40,16 +41,45 @@
     
 	// Do any additional setup after loading the view, typically from a nib.
     self.list = [[NSArray alloc]init];
-    self.edgesForExtendedLayout = UIRectEdgeNone;
-    [self.tableView setBackgroundColor:[UIColor clearColor]];
-    [self.tableView setSeparatorColor:[UIColor clearColor]];
-    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+    //self.edgesForExtendedLayout = UIRectEdgeNone;
     
-    self.navigationItem.leftBarButtonItem =[[UIBarButtonItem alloc] initWithTitle:@"扫一扫" style:UIBarButtonItemStylePlain target:self action:@selector(backToScan)];
+    //self.navigationItem.leftBarButtonItem =[[UIBarButtonItem alloc] initWithTitle:@"扫一扫" style:UIBarButtonItemStylePlain target:self action:@selector(backToScan)];
+    
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem backButtonWith:@"扫一扫"
+                                                                      Width:90
+                                                                  tintColor:[UIColor whiteColor]
+                                                                     target:self
+                                                                  andAction:@selector(backToScan)];
+    
     
     [self getModelInfo];
-    [self.navigationController setHidesBarsOnTap:NO];
+    
+    
 }
+
+
+-(void)viewDidLayoutSubviews
+{
+    if ([self.tableView respondsToSelector:@selector(setSeparatorInset:)]) {
+        [self.tableView setSeparatorInset:UIEdgeInsetsMake(0,0,0,0)];
+    }
+    
+    if ([self.tableView respondsToSelector:@selector(setLayoutMargins:)]) {
+        [self.tableView setLayoutMargins:UIEdgeInsetsMake(0,0,0,0)];
+    }
+}
+
+-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if ([cell respondsToSelector:@selector(setSeparatorInset:)]) {
+        [cell setSeparatorInset:UIEdgeInsetsZero];
+    }
+    
+    if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
+        [cell setLayoutMargins:UIEdgeInsetsZero];
+    }
+}
+
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -112,7 +142,7 @@
     }
     
     NSDictionary* dic = [self.list objectAtIndex:indexPath.row];
-    cell.numLable.text =[NSString stringWithFormat: @"%d", indexPath.row+1];
+    //cell.numLable.text =[NSString stringWithFormat: @"%d", indexPath.row+1];
     cell.textLable1.text = [dic objectForKey:@"S_name"];
     
     return cell;
@@ -150,6 +180,7 @@
                            NSDictionary* userDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&jsonError];
                            if ([userDic objectForKey:@"M_Name" ] != nil)
                            {
+                               ((AppDelegate*)[[UIApplication sharedApplication] delegate]).modelID = [NSString stringWithFormat:@"%@",[userDic objectForKey:@"M_id"]];
                                self.list =[userDic objectForKey:@"SkillList" ];
                                [self.tableView reloadData];
                                
@@ -178,7 +209,7 @@
     if ([destination respondsToSelector:@selector(setData:)]) {
         [destination setValue:[dic objectForKey:@"S_id"] forKey:@"data"];
     }
-    
+    ((AppDelegate*)[[UIApplication sharedApplication] delegate]).skillID = [dic objectForKey:@"S_id"];
 }
 
 @end

@@ -9,10 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "MWPhotoBrowser.h"
 
-@class FSImageViewerViewController;
-
-
-@interface Image_TextViewController : UIViewController<UITableViewDelegate,UITableViewDataSource,MWPhotoBrowserDelegate>
+@interface Image_TextViewController : UIViewController<UITableViewDelegate,UITableViewDataSource,MWPhotoBrowserDelegate,UITextViewDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -25,10 +22,14 @@
 
 @property (nonatomic, strong) NSString *firstImgPath;
 
-@property(strong, nonatomic) FSImageViewerViewController *imageViewController;
+@property (nonatomic, strong) NSString *sIndex;
+@property (nonatomic, strong) NSString *sTotal;
 
 @property (nonatomic, strong) NSMutableArray *photos;
 
 @property (nonatomic, strong) NSMutableArray *thumbs;
+@property (weak, nonatomic) IBOutlet UILabel *currentPage;
+@property (weak, nonatomic) IBOutlet UILabel *totalPage;
+@property (weak, nonatomic) IBOutlet UILabel *labelMore;
 
 @end

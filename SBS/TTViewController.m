@@ -14,6 +14,9 @@
 #import "OnlyTextTableViewController.h"
 #import "Image+TextViewController.h"
 #import "QuestionTableViewController.h"
+#import "WTNetWork.h"
+#import "UIKit+WTRequestCenter.h"
+#import "SVProgressHUD.h"
 
 @interface TTViewController ()
     @property (strong, nonatomic) TTScrollSlidingPagesController *slider;
@@ -89,6 +92,8 @@
                 //3.从storyboard取得newViewCtroller对象，通过Identifier区分
                 OnlyTextTableViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:controllerId];
                 viewController.skillText = [dic objectForKey:@"TextContext"];
+                viewController.sIndex=[NSString stringWithFormat:@"%d",index+1];
+                viewController.sTotal = [NSString stringWithFormat:@"/%d",self.detailList.count];
                 slidePage = [[TTSlidingPage alloc] initWithContentViewController:viewController];
             }
             break;
@@ -102,6 +107,8 @@
             //3.从storyboard取得newViewCtroller对象，通过Identifier区分
             Image_TextViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:controllerId];
             viewController.skillText = [dic objectForKey:@"TextContext"];
+            viewController.sIndex=[NSString stringWithFormat:@"%d",index+1];
+            viewController.sTotal = [NSString stringWithFormat:@"/%d",self.detailList.count];
             
             NSString* imagePath = [dic objectForKey:@"ImagePaths"];
             NSString* firstPath = nil;
@@ -148,6 +155,9 @@
             
             viewController.questionExlain = [dic objectForKey:@"P_quesstionExlain"];
             
+            viewController.sIndex=[NSString stringWithFormat:@"%d",index+1];
+            viewController.sTotal = [NSString stringWithFormat:@"/%d",self.detailList.count];
+            
             slidePage = [[TTSlidingPage alloc] initWithContentViewController:viewController];
             
         }
@@ -166,6 +176,9 @@
             viewController.questionContent = [dic objectForKey:@"P_questionOptions"];
             
             viewController.questionExlain = [dic objectForKey:@"P_quesstionExlain"];
+            
+            viewController.sIndex=[NSString stringWithFormat:@"%d",index+1];
+            viewController.sTotal = [NSString stringWithFormat:@"/%d",self.detailList.count];
             
             slidePage = [[TTSlidingPage alloc] initWithContentViewController:viewController];
             
@@ -200,7 +213,7 @@
 
 - (void)finishWork
 {
-    [self.navigationController setHidesBarsOnTap:NO];
+    [self addFinishLog];
     [self.navigationController popToRootViewControllerAnimated:NO];
 }
 
@@ -222,6 +235,47 @@
         //NSLog(@"用户点击了返回按钮");
         [self.navigationController popToRootViewControllerAnimated:NO];
     }
+}
+
+-(void) addFinishLog
+{
+    NSUserDefaults *defaults =[NSUserDefaults standardUserDefaults];
+    if ([defaults objectForKey:@"ipconfig"]==nil) {
+        return;
+    }
+    NSString* uniID =((AppDelegate*)[[UIApplication sharedApplication] delegate]).Uid;
+    
+    NSString* logId =((AppDelegate*)[[UIApplication sharedApplication] delegate]).logID;
+    
+    NSString *BaseUrl=[defaults objectForKey:@"ipconfig"];
+    
+    NSString *url = [NSString stringWithFormat:@"http://%@/handlers/LogUpdateHandler.ashx?log_id=%@&uniquid=%@",BaseUrl,logId,[uniID stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+    
+    
+    [WTRequestCenter getWithURL:url parameters:nil option:WTRequestCenterCachePolicyNormal
+                       finished:^(NSURLResponse *response, NSData *data) {
+                           //[SVProgressHUD dismiss];
+                           NSError *jsonError = nil;
+                           NSDictionary *userDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&jsonError];
+                           if (!jsonError) {
+                               if ([[userDic objectForKey:@"result"] isEqualToString:@"1"])
+                               {
+                                   
+                                   
+                               } else
+                               {
+                                   //[SVProgressHUD showErrorWithStatus:[userDic objectForKey:@"Reason"]];
+                               }
+                           } else
+                           {
+                               //[SVProgressHUD showErrorWithStatus:[jsonError localizedDescription]];
+                           }
+                           
+                           
+                       }failed:^(NSURLResponse *response, NSError *error) {
+                           //[SVProgressHUD showErrorWithStatus:[error localizedDescription]];
+                       }];
+    
 }
 
 @end

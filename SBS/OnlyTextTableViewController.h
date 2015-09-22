@@ -7,11 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
-#define SMALLFONT 15
-#define BIGFONT 20
+#import "MWPhotoBrowser.h"
+#define SMALLFONT 16
+#define BIGFONT 18
 #define WIDTH 280
 
 
-@interface OnlyTextTableViewController : UITableViewController
+@interface OnlyTextTableViewController : UIViewController<UITableViewDelegate,UITableViewDataSource,UITextViewDelegate,MWPhotoBrowserDelegate>
 @property (nonatomic, strong) NSArray *skillText;
+@property (nonatomic, strong) NSString *sIndex;
+@property (nonatomic, strong) NSString *sTotal;
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UILabel *currentPage;
+@property (weak, nonatomic) IBOutlet UILabel *totalPage;
+@property (nonatomic, strong) NSMutableArray *photos;
 @end
