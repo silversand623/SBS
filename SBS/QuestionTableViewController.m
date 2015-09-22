@@ -123,6 +123,11 @@
         oldCell.backgroundColor = [UIColor whiteColor];
         _lastIndexPath = indexPath;
     }
+    NSString *sItem = self.optionArray[newRow];
+    NSString *sTitle = [NSString stringWithFormat:@"%@ (%@)", self.questionTitle,sItem];
+    
+    NSMutableAttributedString *str = [[NSMutableAttributedString alloc] initWithString:sTitle];
+    self.labelQuestion.attributedText = str;
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }

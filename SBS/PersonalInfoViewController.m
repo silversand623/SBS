@@ -65,7 +65,7 @@
                                 [[self className] setText:[obj objectForKey:@"BanJiName"]];
                                 [[self phone] setText:[obj objectForKey:@"Phone"]];
                                 NSString *imageUrl = [NSString stringWithFormat:@"http://%@%@",BaseUrl,[obj objectForKey:@"PhotoPath"]];
-                                [[self imgUser] setImageWithURL:imageUrl placeholderImage:[UIImage imageNamed:@"personal-1.png"] finished:^(NSURLResponse *response, NSData *data) {
+                                [[self imgUser] setImageWithURL:imageUrl placeholderImage:[UIImage imageNamed:@"user.png"] finished:^(NSURLResponse *response, NSData *data) {
                                     
                                     
                                     

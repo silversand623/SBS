@@ -79,7 +79,8 @@
         NSString *sIP = [defaults objectForKey:@"ipconfig"];
         NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
         paragraphStyle.lineSpacing = 7.0f;
-        paragraphStyle.firstLineHeadIndent = 20.0f;
+        paragraphStyle.firstLineHeadIndent = 10.0f;
+        paragraphStyle.headIndent = 10.0f;
         
         NSDictionary *ats = @{
                               NSFontAttributeName : [UIFont systemFontOfSize:SMALLFONT],
