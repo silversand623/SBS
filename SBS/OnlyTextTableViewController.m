@@ -150,7 +150,7 @@
     cell.viewDetail.bounds = bounds;
     
     int nHeight = 0;
-    nHeight = MAX(newSize.height, 40);
+    nHeight = MAX(newSize.height, 40)-10;
     
     return nHeight;
 }
