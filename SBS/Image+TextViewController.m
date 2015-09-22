@@ -215,17 +215,16 @@
                 NSTextAttachment *attachment=[[NSTextAttachment alloc] initWithData:nil ofType:nil];
                 UIImage *img=[UIImage imageNamed:@"video.png"];
                 attachment.image=img;
-                attachment.bounds=CGRectMake(0, 0, 30, 30);
+                attachment.bounds=CGRectMake(0, 0, 25, 25);
                 attachment.accessibilityHint = videoUrl;//save video address
                 NSAttributedString *text=[NSAttributedString attributedStringWithAttachment:attachment];
-                [attrString appendAttributedString:text];
-                strTemp = [NSString stringWithFormat:@"\n"];
-                attrTemp = [[NSAttributedString alloc] initWithString:strTemp attributes:ats];
-                [attrString appendAttributedString:attrTemp];
+                [attrString insertAttributedString:text atIndex:attrString.length-1];
+                
             }
             strTemp = [NSString stringWithFormat:@"%@\n",[strs objectAtIndex:0]];
             attrTemp = [[NSAttributedString alloc] initWithString:strTemp attributes:ats];
             [attrString appendAttributedString:attrTemp];
+            
         }
         
         cell.viewDetail.attributedText = attrString;

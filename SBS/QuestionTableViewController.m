@@ -9,6 +9,8 @@
 #import "QuestionTableViewController.h"
 #import "SVProgressHUD.h"
 #import "UIColor+WTRequestCenter.h"
+#define iOS7 ([[UIDevice currentDevice].systemVersion doubleValue] >= 7.0)
+#define iOS8 ([[UIDevice currentDevice].systemVersion doubleValue] >= 8.0)
 
 @interface QuestionTableViewController ()
 @property(strong,nonatomic)NSIndexPath *lastIndexPath;
@@ -82,6 +84,15 @@
         if (![item isEqualToString:@""]) {
             cell.textLabel.text = [[NSString alloc] initWithFormat:@"%@. %@",self.optionArray[indexPath.row],item];
             cell.textLabel.numberOfLines=0;
+            //resize the height of label
+            CGRect rect = cell.textLabel.frame;
+            rect.size.height = [self getLabelHeight:cell.textLabel.text]+10;
+            if (iOS8)
+            {
+                [cell.textLabel setFrame:CGRectMake(20, 0, rect.size.width, rect.size.height)];
+            } else if (iOS7) {
+                [cell.textLabel setFrame:rect];
+            }
             
         }
     }
@@ -130,12 +141,12 @@
     // 列寬
     CGFloat contentWidth = 280;
     // 用何種字體進行顯示
-    UIFont *font = [UIFont systemFontOfSize:16];
+    UIFont *font = [UIFont systemFontOfSize:18];
     
     // 該行要顯示的內容
     // 計算出顯示完內容需要的最小尺寸
     CGSize size = [sText sizeWithFont:font constrainedToSize:CGSizeMake(contentWidth, 1000.0f) lineBreakMode:NSLineBreakByWordWrapping];
-    return MAX(size.height, 38)+2;
+    return MAX(size.height, 30)+10;
 }
 
 - (IBAction)confirmAnswer:(UIButton *)sender {

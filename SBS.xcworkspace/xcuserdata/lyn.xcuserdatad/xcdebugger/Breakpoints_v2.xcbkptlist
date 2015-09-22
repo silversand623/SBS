@@ -777,22 +777,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SBS/QuestionTableViewController.m"
-            timestampString = "464149903.776446"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "134"
-            endingLineNumber = "134"
-            landmarkName = "-getLabelHeight:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "SBS/ExamViewController.m"
             timestampString = "457864616.473112"
             startingColumnNumber = "9223372036854775807"
@@ -1146,11 +1130,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SBS/QuestionTableViewController.m"
-            timestampString = "464149903.776446"
+            timestampString = "464584468.836569"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "172"
-            endingLineNumber = "172"
+            startingLineNumber = "183"
+            endingLineNumber = "183"
             landmarkName = "-confirmAnswer:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1162,11 +1146,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SBS/QuestionTableViewController.m"
-            timestampString = "464149903.776446"
+            timestampString = "464584468.836569"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "141"
-            endingLineNumber = "141"
+            startingLineNumber = "152"
+            endingLineNumber = "152"
             landmarkName = "-confirmAnswer:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1232,6 +1216,38 @@
             startingLineNumber = "24"
             endingLineNumber = "24"
             landmarkName = "-viewDidLoad"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SBS/QuestionTableViewController.m"
+            timestampString = "464584468.836569"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "135"
+            endingLineNumber = "135"
+            landmarkName = "-tableView:heightForRowAtIndexPath:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SBS/QuestionTableViewController.m"
+            timestampString = "464584468.836569"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "148"
+            endingLineNumber = "148"
+            landmarkName = "-getLabelHeight:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
