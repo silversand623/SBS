@@ -39,7 +39,8 @@
         NSIndexPath *indexPath = [NSIndexPath indexPathForItem:self.questionContent.count-1 inSection:0];
         [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom animated:NO];
     }
-    self.labelQuestion.text = [NSString stringWithFormat:@"%@ ( )", self.questionTitle];
+    //self.labelQuestion.text = [NSString stringWithFormat:@"%@ ( )", self.questionTitle];
+    _strQuestion = [NSString stringWithFormat:@"%@ ( )", self.questionTitle];
     
     // 设置UIScrollView的滚动范围（内容大小）
     _scrollView.contentSize = CGSizeMake(320, 480);
@@ -94,12 +95,9 @@
     
     if (self.questionContent != nil) {
         nCount = indexPath.row;
-        NSString *sItem = @"";
         if (nCount == 0) {
-            if ([_lastIndexPath row] > 0) {
-                sItem = self.optionArray[[_lastIndexPath row]-1];
-            }
-            cell.textLabel.text = [NSString stringWithFormat:@"%@ (%@ )", self.questionTitle,sItem];
+            
+            cell.textLabel.text = _strQuestion;
             cell.textLabel.numberOfLines=0;
             
         } else
@@ -148,11 +146,11 @@
         _lastIndexPath = indexPath;
     }
     NSString *sItem = self.optionArray[newRow-1];
-    NSString *sTitle = [NSString stringWithFormat:@"%@ (%@)", self.questionTitle,sItem];
+    _strQuestion = [NSString stringWithFormat:@"%@ (%@)", self.questionTitle,sItem];
     
     NSIndexPath *path =  [NSIndexPath indexPathForItem:0 inSection:0];
     UITableViewCell *firstCell = [tableView cellForRowAtIndexPath:path];
-    firstCell.textLabel.text = sTitle;
+    firstCell.textLabel.text = _strQuestion;
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     //[tableView reloadData];
@@ -224,7 +222,7 @@
     //self.labelQuestion.attributedText = str;
     NSIndexPath *path =  [NSIndexPath indexPathForItem:0 inSection:0];
     UITableViewCell *firstCell = [self.tableView cellForRowAtIndexPath:path];
-    //firstCell.textLabel.attributedText = str;
+    firstCell.textLabel.attributedText = str;
     //[self.tableView reloadData];
     
     [self.labelAnswer setHidden:NO];

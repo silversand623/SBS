@@ -16,6 +16,7 @@
 @property (nonatomic,strong)NSArray* questionContent;
 @property(nonatomic,strong)NSString* questionAnswer;
 @property(nonatomic,strong)NSString* questionExlain;
+@property (nonatomic, strong)NSString* strQuestion;
 @property (weak, nonatomic) IBOutlet UILabel *currentPage;
 @property (weak, nonatomic) IBOutlet UILabel *totalPage;
 @property (nonatomic, strong) NSString *sIndex;
