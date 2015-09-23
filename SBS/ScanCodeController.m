@@ -10,7 +10,7 @@
 #import "AppDelegate.h"
 #import "CustonTabViewController.h"
 #import "UIBarButtonItem+DefaultBackButton.h"
-#define SIMULATOR 1
+//#define SIMULATOR 1
 
 @interface ScanCodeController ()
 
