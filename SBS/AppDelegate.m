@@ -32,7 +32,7 @@
     [self.window makeKeyAndVisible];
     
     UINavigationBar *bar=[UINavigationBar appearance];
-    [bar setBarTintColor:[UIColor WTcolorWithHexString:@"#30363f"]];
+    [bar setBarTintColor:[UIColor WTcolorWithHexString:@"#333333"]];
     [bar setTintColor:[UIColor whiteColor]];
     [bar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor],
                                   NSFontAttributeName:[UIFont systemFontOfSize:18],

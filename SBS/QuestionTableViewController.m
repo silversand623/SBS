@@ -223,7 +223,7 @@
     NSIndexPath *path =  [NSIndexPath indexPathForItem:0 inSection:0];
     UITableViewCell *firstCell = [self.tableView cellForRowAtIndexPath:path];
     firstCell.textLabel.attributedText = str;
-    //[self.tableView reloadData];
+    [self.tableView reloadData];
     
     [self.labelAnswer setHidden:NO];
     CGFloat fHeight = [self getLabelHeight:self.labelAnswer.text];

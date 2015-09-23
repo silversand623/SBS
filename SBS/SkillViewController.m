@@ -145,6 +145,9 @@
     //cell.numLable.text =[NSString stringWithFormat: @"%d", indexPath.row+1];
     cell.textLable1.text = [dic objectForKey:@"S_name"];
     
+    cell.selectedBackgroundView = [[UIView alloc] initWithFrame:cell.frame];
+    cell.selectedBackgroundView.backgroundColor = [UIColor WTcolorWithHexString:@"#ced8e3"];
+    
     return cell;
 }
 
