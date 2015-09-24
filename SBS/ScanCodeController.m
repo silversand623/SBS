@@ -41,7 +41,7 @@
 - (IBAction)scanCode:(UIButton *)sender {
     
 #ifdef SIMULATOR
-    ((AppDelegate*)[[UIApplication sharedApplication] delegate]).modelName = @"TY000112345678NUI0300051ADC00";
+    ((AppDelegate*)[[UIApplication sharedApplication] delegate]).modelName = @"TY000112345678SUI0300032ADC00";
     //全功能急救人140301
     static  NSString *controllerId =@"customTab";
     //2.获取UIStoryboard对象
