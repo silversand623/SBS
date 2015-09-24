@@ -209,6 +209,9 @@
         {
             NSString *str = [items objectAtIndex:i];
             NSArray* strs = [str componentsSeparatedByString:@"^"];
+            strTemp = [NSString stringWithFormat:@"%@\n",[strs objectAtIndex:0]];
+            attrTemp = [[NSAttributedString alloc] initWithString:strTemp attributes:ats];
+            [attrString appendAttributedString:attrTemp];
             if (strs.count > 1) {
                 NSString *videoUrl = [strs objectAtIndex:1];
                 NSArray *strVideo = [videoUrl componentsSeparatedByString:@"￥"];
@@ -222,10 +225,7 @@
                 [attrString insertAttributedString:text atIndex:attrString.length-1];
                 
             }
-            strTemp = [NSString stringWithFormat:@"%@\n",[strs objectAtIndex:0]];
-            attrTemp = [[NSAttributedString alloc] initWithString:strTemp attributes:ats];
-            [attrString appendAttributedString:attrTemp];
-            
+
         }
         
         cell.viewDetail.attributedText = attrString;
