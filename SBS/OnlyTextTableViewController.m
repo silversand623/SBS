@@ -83,7 +83,7 @@
         paragraphStyle.headIndent = 10.0f;
         
         NSDictionary *ats = @{
-                              NSFontAttributeName : [UIFont systemFontOfSize:SMALLFONT],
+                              NSFontAttributeName : [UIFont systemFontOfSize:16],
                               NSParagraphStyleAttributeName : paragraphStyle,
                               };
         
@@ -113,23 +113,46 @@
         {
             NSString *str = [items objectAtIndex:i];
             NSArray* strs = [str componentsSeparatedByString:@"^"];
-            strTemp = [NSString stringWithFormat:@"%@\n",[strs objectAtIndex:0]];
+            strTemp = [NSString stringWithFormat:@"%@",[strs objectAtIndex:0]];
             attrTemp = [[NSAttributedString alloc] initWithString:strTemp attributes:ats];
             [attrString appendAttributedString:attrTemp];
             if (strs.count > 1) {
-                NSString *videoUrl = [strs objectAtIndex:1];
-                NSArray *strVideo = [videoUrl componentsSeparatedByString:@"￥"];
-                videoUrl = [NSString stringWithFormat:@"http://%@%@", sIP ,[strVideo objectAtIndex:0]];
-                NSTextAttachment *attachment=[[NSTextAttachment alloc] initWithData:nil ofType:nil];
-                UIImage *img=[UIImage imageNamed:@"video.png"];
-                attachment.image=img;
-                attachment.bounds=CGRectMake(0, 0, 25, 25);
-                attachment.accessibilityHint = videoUrl;//save video address
-                NSAttributedString *text=[NSAttributedString attributedStringWithAttachment:attachment];
-                [attrString insertAttributedString:text atIndex:attrString.length-1];
+                for (int k=1; k<strs.count; k++) {
+                    NSString *videoUrl = [strs objectAtIndex:k];
+                    NSArray *strVideo = [videoUrl componentsSeparatedByString:@"￥"];
+                    videoUrl = [NSString stringWithFormat:@"http://%@%@", sIP ,[strVideo objectAtIndex:0]];
+                    NSTextAttachment *attachment=[[NSTextAttachment alloc] initWithData:nil ofType:nil];
+                    UIImage *img=[UIImage imageNamed:@"video.png"];
+                    attachment.image=img;
+                    attachment.bounds=CGRectMake(0, 0, 25, 25);
+                    attachment.accessibilityHint = videoUrl;//save video address
+                    NSAttributedString *text=[NSAttributedString attributedStringWithAttachment:attachment];
+                    [attrString insertAttributedString:text atIndex:attrString.length];
+                    
+                    if (strVideo.count > 1) {
+                        NSString *strText = [strVideo objectAtIndex:1];
+                        if (strText == nil || [strText isEqualToString:@""])
+                        {
+                            
+                        }
+                        else
+                        {
+                            attrTemp = [[NSAttributedString alloc] initWithString:strText attributes:ats];
+                            [attrString appendAttributedString:attrTemp];
+                        }
+                    }
+                    
+                }
+                
             }
+            strTemp = @"\n";
+            attrTemp = [[NSAttributedString alloc] initWithString:strTemp attributes:ats];
+            [attrString appendAttributedString:attrTemp];
             
         }
+        
+        
+        
         
         cell.viewDetail.attributedText = attrString;
     }
