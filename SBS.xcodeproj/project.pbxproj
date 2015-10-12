@@ -100,7 +100,6 @@
 		AD6E98841925D581006C4A7A /* remind_noimage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD6E98701925D581006C4A7A /* remind_noimage@2x.png */; };
 		AD6E98851925D581006C4A7A /* THProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6E98731925D581006C4A7A /* THProgressView.m */; };
 		AD6E98861925D581006C4A7A /* UIImageView+LK.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6E98751925D581006C4A7A /* UIImageView+LK.m */; };
-		ADB63EB619F0FCEB00E0E344 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = ADB63EB519F0FCEB00E0E344 /* icon.png */; };
 		ADBA9894192C891300F48030 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBA9893192C891300F48030 /* libPods.a */; settings = {ATTRIBUTES = (Required, ); }; };
 		ADBCECFE19CFBDA400059CDE /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBCECFD19CFBDA400059CDE /* libsqlite3.dylib */; };
 /* End PBXBuildFile section */
@@ -276,7 +275,6 @@
 		AD6E98731925D581006C4A7A /* THProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THProgressView.m; sourceTree = "<group>"; };
 		AD6E98741925D581006C4A7A /* UIImageView+LK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+LK.h"; sourceTree = "<group>"; };
 		AD6E98751925D581006C4A7A /* UIImageView+LK.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+LK.m"; sourceTree = "<group>"; };
-		ADB63EB519F0FCEB00E0E344 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = SOURCE_ROOT; };
 		ADBA9893192C891300F48030 /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/build/Debug-iphoneos/libPods.a"; sourceTree = "<group>"; };
 		ADBCECFD19CFBDA400059CDE /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -441,7 +439,6 @@
 		1397D79818ACB3AF00C5E24A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				ADB63EB519F0FCEB00E0E344 /* icon.png */,
 				1397D79918ACB3AF00C5E24A /* SBS-Info.plist */,
 				1397D79A18ACB3AF00C5E24A /* InfoPlist.strings */,
 				1397D79D18ACB3AF00C5E24A /* main.m */,
@@ -680,7 +677,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1397D7AA18ACB3AF00C5E24A /* Images.xcassets in Resources */,
-				ADB63EB619F0FCEB00E0E344 /* icon.png in Resources */,
 				3C34A00C1B5E45A6005C1C58 /* logo.png in Resources */,
 				1397D7F918ACBFAD00C5E24A /* zbar-back.png in Resources */,
 				3CFAF4A91B60CAD300FCF443 /* 3.png in Resources */,
