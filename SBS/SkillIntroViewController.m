@@ -96,7 +96,7 @@
                                    __weak UIImageView *weakImageView = self.InfoPic;
                                    [SVProgressHUD showWithStatus:@"正在加载图片" maskType:SVProgressHUDMaskTypeGradient];
                                    
-                                   [weakImageView setImageWithURL:imageUrl placeholderImage:nil finished:^(NSURLResponse *response, NSData *data) {
+                                   [weakImageView setImageWithURL:imageUrl placeholderImage:[UIImage imageNamed:@"loading.png"] finished:^(NSURLResponse *response, NSData *data) {
                                        [SVProgressHUD dismiss];
                                        [SVProgressHUD showSuccessWithStatus:@"图片加载成功"];
                                        self.InfoPic.onTouchTapBlock = ^(UIImageView * view)

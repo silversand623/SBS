@@ -81,7 +81,7 @@
 {
     NSUserDefaults *defaults =[NSUserDefaults standardUserDefaults];
     self.IP = [defaults objectForKey:@"ipconfig"];
-    [SVProgressHUD showWithStatus:@"正在登陆" maskType:SVProgressHUDMaskTypeGradient];
+    [SVProgressHUD showWithStatus:@"正在登录" maskType:SVProgressHUDMaskTypeGradient];
     if (self.usernameLable.text.length == 0 || self.passwordLable.text.length == 0)
     {
         UIAlertView* alert = [[UIAlertView alloc]initWithTitle:@"请输入用户名密码！" message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
