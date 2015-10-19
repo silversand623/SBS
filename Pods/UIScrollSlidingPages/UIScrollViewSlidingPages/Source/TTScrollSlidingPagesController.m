@@ -319,6 +319,11 @@
     
     //scroll to the initialpage
     [self scrollToPage:initialPage animated:NO];
+    
+    //call the delegate to tell him you've scrolled to another page
+    if([self.delegate respondsToSelector:@selector(didScrollToViewAtIndex:)]){
+        [self.delegate didScrollToViewAtIndex:initialPage];
+    }
 }
 
 
