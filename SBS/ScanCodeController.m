@@ -41,7 +41,8 @@
 - (IBAction)scanCode:(UIButton *)sender {
     
 #ifdef SIMULATOR
-    ((AppDelegate*)[[UIApplication sharedApplication] delegate]).modelName = @"TY000100004435MA21769F8FE2E00";
+    ((AppDelegate*)[[UIApplication sharedApplication] delegate]).modelName = @"TY000100004435M968F9E87E60E00";
+    //((AppDelegate*)[[UIApplication sharedApplication] delegate]).modelName = @"TY000100004435MA21769F8FE2E00";
     //((AppDelegate*)[[UIApplication sharedApplication] delegate]).modelName = @"TY000100004435M5638762B297E00";
     //((AppDelegate*)[[UIApplication sharedApplication] delegate]).modelName = @"TY000112345678NUI0300051ADC00";
     //全功能急救人140301

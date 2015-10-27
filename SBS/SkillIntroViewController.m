@@ -98,7 +98,11 @@
                                    
                                    [weakImageView setImageWithURL:imageUrl placeholderImage:[UIImage imageNamed:@"loading.png"] finished:^(NSURLResponse *response, NSData *data) {
                                        [SVProgressHUD dismiss];
-                                       [SVProgressHUD showSuccessWithStatus:@"图片加载成功"];
+                                       NSString * strPic = [dic objectForKey:@"HeadPicPath"];
+                                       if (![strPic isEqualToString:@""]) {
+                                           [SVProgressHUD showSuccessWithStatus:@"图片加载成功"];
+                                       }
+                                       
                                        self.InfoPic.onTouchTapBlock = ^(UIImageView * view)
                                        {
                                            [self imageClicked];

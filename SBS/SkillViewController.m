@@ -193,7 +193,7 @@
                            }
                            
                        }failed:^(NSURLResponse *response, NSError *error) {
-                           [SVProgressHUD showErrorWithStatus:@"访问服务器失败。"];
+                           //[SVProgressHUD showErrorWithStatus:@"访问服务器失败。"];
                        }];
     
 }

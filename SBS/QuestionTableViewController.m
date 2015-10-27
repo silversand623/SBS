@@ -161,7 +161,8 @@
 {
     if (self.questionContent != nil) {
         if (indexPath.row == 0) {
-            return 55;
+            
+            return [self getLabelHeight:_strQuestion];
         }else
         {
             NSString *content = [self.questionContent objectAtIndex:indexPath.row-1];
