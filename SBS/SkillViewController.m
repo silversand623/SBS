@@ -13,6 +13,8 @@
 #import "UIImageView+WTRequestCenter.h"
 #import "UIImage+WTRequestCenter.h"
 #import "UIBarButtonItem+DefaultBackButton.h"
+#define iOS7 ([[UIDevice currentDevice].systemVersion doubleValue] >= 7.0)
+#define iOS8 ([[UIDevice currentDevice].systemVersion doubleValue] >= 8.0)
 
 @interface SkillViewController()
 @property(strong,nonatomic)NSArray *list;
@@ -144,11 +146,34 @@
     NSDictionary* dic = [self.list objectAtIndex:indexPath.row];
     //cell.numLable.text =[NSString stringWithFormat: @"%d", indexPath.row+1];
     cell.textLable1.text = [dic objectForKey:@"S_name"];
+    cell.textLable1.numberOfLines = 0;
     
     cell.selectedBackgroundView = [[UIView alloc] initWithFrame:cell.frame];
     cell.selectedBackgroundView.backgroundColor = [UIColor WTcolorWithHexString:@"#ced8e3"];
     
+    //resize the height of label
+    CGRect rect = cell.textLable1.frame;
+    rect.size.height = [self getLabelHeight:cell.textLabel.text];
+    if (iOS8)
+    {
+        [cell.textLable1 setFrame:CGRectMake(20, 0, rect.size.width, rect.size.height)];
+    } else if (iOS7) {
+        [cell.textLable1 setFrame:rect];
+    }
+    
     return cell;
+}
+
+-(CGFloat)getLabelHeight:(NSString *)sText {
+    // 列寬
+    CGFloat contentWidth = 280;
+    // 用何種字體進行顯示
+    UIFont *font = [UIFont systemFontOfSize:18];
+    
+    // 該行要顯示的內容
+    // 計算出顯示完內容需要的最小尺寸
+    CGSize size = [sText sizeWithFont:font constrainedToSize:CGSizeMake(contentWidth, 1000.0f) lineBreakMode:NSLineBreakByWordWrapping];
+    return MAX(size.height, 45)+10;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -159,6 +184,11 @@
 //------------------TableView Cell Height------------------
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSDictionary* dic = [self.list objectAtIndex:indexPath.row];
+    NSString *strName = [dic objectForKey:@"S_name"];
+    if (strName != nil) {
+        return [self getLabelHeight:strName];
+    }
     return 55;
 }
 
