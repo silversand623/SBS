@@ -82,6 +82,18 @@
     });
 }
 
+- (void)tik
+{
+    if ([[UIApplication sharedApplication] backgroundTimeRemaining] < 61.0) {
+        //[[CKAudioTool sharedInstance] playSound];
+        [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:nil];
+        }
+    //[[CKAudioTool sharedInstance] playSound];//这段代码是去播放了一个无声的音乐，很关键的一点是
+    NSError *setCategoryErr = nil;
+    NSError *activationErr  = nil;
+    [[AVAudioSession sharedInstance] setCategory: AVAudioSessionCategoryPlayback error: &setCategoryErr];
+    [[AVAudioSession sharedInstance] setActive: YES error: &activationErr];
+}
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
