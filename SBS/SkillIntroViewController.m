@@ -49,8 +49,12 @@
 -(void)handleSwipeFrom:(UISwipeGestureRecognizer *)recognizer{
 
     if(recognizer.direction==UISwipeGestureRecognizerDirectionLeft) {
-        
-        [self imageClicked];
+        if (self.detailInfo == nil) {
+            [SVProgressHUD showErrorWithStatus:@"当前技能没有内容，请返回。"];
+        } else
+        {
+            [self imageClicked];
+        }
     }
 
 }
